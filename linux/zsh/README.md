@@ -1,2 +1,6 @@
 #来自oh-my-zsh，少量修改个人配置
-目录： ~/        //当前个人目录
+
+    ~/
+    |--.zshrc
+    |--.zshrc.pre-oh-my-zsh
+    |--.oh-my-zsh
