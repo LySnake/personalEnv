@@ -15,6 +15,8 @@
 ###chrome
 **插件**
 
+[如何高效地使用搜索引擎？](https://www.zhihu.com/question/28013848)：来自zhihu的问答。
+
 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif):来自[XX-Net](https://github.com/XX-net/XX-Net),搭建梯子。
 
 [Click&Clean](https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod):管理工具，可管理chrome，也可以管理PC设备。
@@ -41,7 +43,6 @@
 
 [chrome有哪些好用的插件](https://www.zhihu.com/question/23228162)
 
-[如何高效地使用搜索引擎？](https://www.zhihu.com/question/28013848)
 ---
 
 ###windows
@@ -84,7 +85,7 @@
 *其它*：进个人_百度网盘_查找。
 
 
-----
+---
 
 ###linux
 
@@ -100,14 +101,23 @@
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):实现PC梯子，免费情况下每月800M，速度还可以，可用于ubuntu for windows 10下载bash等。
 
 ####sublime text3插件
-[babel]():
 
-[BracketHighlighter]():
+[BracketHighlighter](https://github.com/facelessuser/BracketHighlighter):用于匹配括号，引号和html标签。对于很长的代码很有用。安装好之后，不需要设置插件会自动生效。
 
-[emmet]():
+[emmet](https://github.com/sergeche/emmet-sublime):使用Sublime Text进行前端开发必不可少的插件它让编写HTML代码变得极其简单高效。
 
-[JsFormat]():
+[JsFormat](https://github.com/jdc0589/JsFormat):将JS格式化的插件。
 
-[Better-Completion]():
+[Sublime-Better-Completion](https://github.com/Pleasurazy/Sublime-Better-Completion):JavaScript ,jQuery , Bootstrap 等js库的自动补全。
 
-[markdown-extended]():
+[markdown-extended](https://github.com/jonschlinkert/sublime-markdown-extended):支持Markdown语法高亮。
+
+[SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements/tree/st3):是一款很实用的右键菜单增强插件。
+
+[Autoprefixer](https://github.com/sindresorhus/sublime-autoprefixer):这是一款CSS3私有前缀自动补全插件该插件使用CanIUse资料库，能精准判断哪些属性需要什么前缀与CssComb插件一样，该插件也需要系统已安装Node.js环境。
+
+[CSScomb](https://github.com/csscomb/sublime-csscomb):CSS属性排序。
+
+[ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8):支持 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的插件。
+
+[SublimeCodeIntel](https://github.com/jikeytang/sublime-text):支持跳转到变量、函数定义的功能，另外还有代码提示和自动补全的功能。
