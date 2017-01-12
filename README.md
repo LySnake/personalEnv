@@ -96,10 +96,13 @@
 ---
 ###其它
 ####云梯
-[XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，最多6个AppID,实现chrome云梯，网络基本和国内区别不大，youtube也能看视频。当PC其它应用要梯子时，不可用。
+[XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，最多6个AppID,实现**chrome云梯**，网络基本和国内区别不大，youtube也能看视频。当PC其它应用要梯子时，不可用。
 
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):实现PC梯子，免费情况下每月800M，速度还可以，可用于ubuntu for windows 10下载bash等。
 
+[openwrt](https://github.com/softwaredownload/openwrt-fanqiang):实现路由器自动云梯，且因内置linux系统，可定制化功能，路由器成本不低，适合居家使用，但未曾试用过。
+
+[更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
 ####sublime text3插件
 
 [BracketHighlighter](https://github.com/facelessuser/BracketHighlighter):用于匹配括号，引号和html标签。对于很长的代码很有用。安装好之后，不需要设置插件会自动生效。
