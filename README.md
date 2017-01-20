@@ -78,6 +78,8 @@
 
 [护眼宝](http://www.huyanbao.com)：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。
 
+[Gitter](https://gitter.im/apps):免费、开放的程序员沟通方式，所有的信息都可以免费永久保存。
+
 *Powertool*:系统清理工具。
 
 *licecap*:Gif文件录制工具。
