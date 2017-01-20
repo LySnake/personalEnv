@@ -66,7 +66,13 @@
 
 [硕鼠](http://download.flvcd.com/):支持多个网站的在线视频下载。
 
-[Wox](https://github.com/Wox-launcher/Wox/releases):使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。
+[网易云音乐](http://music.163.com/):美观、友好、歌曲推荐算法强。
+
+[FoxMail](http://foxmail.com.cn/):本地mail客户端。
+
+[Wox](https://github.com/Wox-launcher/Wox/releases):功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。
+
+[Listary](http://www.listary.com/):如功能和Wox一样，但是匹配没有Wox好。来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
 [Ubuntu on Windows](http://www.xitongcheng.com/jiaocheng/win10_article_27723.html):在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子，当chrome的梯子不行。
 
@@ -80,6 +86,11 @@
 
 [Gitter](https://gitter.im/apps):免费、开放的程序员沟通方式，所有的信息都可以免费永久保存。
 
+[TeamViewer](http://www.zdfans.com/789.html):远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
+
+[AnyDesk](https://anydesk.com/remote-desktop):远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
+
+[向日葵](http://sunlogin.oray.com/zh_CN/):官网信息(远程手机操作PC开机，控制)，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 *Powertool*:系统清理工具。
 
 *licecap*:Gif文件录制工具。
@@ -126,3 +137,18 @@
 [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8):支持 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的插件。
 
 [SublimeCodeIntel](https://github.com/jikeytang/sublime-text):支持跳转到变量、函数定义的功能，另外还有代码提示和自动补全的功能。
+
+####数据备份恢复
+数据备份软件来自[wsgzao的博客](https://wsgzao.github.io/post/windows/),没有使用过。
+
+[易数一键还原](http://www.onekeyrestore.cn/):以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。
+
+[DiskGenius ](https://pan.baidu.com/s/1kTj3b75):国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.
+
+[EaseUS Data Recovery Wizard](http://www.0daydown.com/?s=EaseUS+Data+Recovery):原先是国产易我数据恢复，现在依旧犀利啊
+
+
+####其它网友环境
+
+[wsgzao推荐的软件](https://wsgzao.github.io/post/windows/)。
+
