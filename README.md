@@ -38,6 +38,10 @@
 
 [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN):游览网站像操作vim一样操作。
 
+
+
+[google翻译](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb):翻译网页或选中字词或短语时翻译。
+
 [chrome有哪些好用的插件](https://www.zhihu.com/question/23228162)
 
 ---
