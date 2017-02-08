@@ -92,9 +92,11 @@
 [AnyDesk](https://anydesk.com/remote-desktop):远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
 [向日葵](http://sunlogin.oray.com/zh_CN/):官网信息(远程手机操作PC开机，控制)，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
-*Powertool*:系统清理工具。
 
-*licecap*:Gif文件录制工具。
+[licecap](http://www.cockos.com/licecap/):Gif文件录制工具。
+
+
+*Powertool*:系统清理工具。
 
 *其它*：进个人_百度网盘_查找。
 
