@@ -141,6 +141,7 @@
 
 [SublimeCodeIntel](https://github.com/jikeytang/sublime-text):支持跳转到变量、函数定义的功能，另外还有代码提示和自动补全的功能。
 
+[vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight):支持vue框架的vue文件代码高亮。
 ### 数据备份恢复 ##
 数据备份软件来自[wsgzao的博客](https://wsgzao.github.io/post/windows/),没有使用过。
 
