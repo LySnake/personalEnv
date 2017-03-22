@@ -38,9 +38,12 @@
 
 [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN):游览网站像操作vim一样操作。
 
-
-
 [google翻译](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb):翻译网页或选中字词或短语时翻译。
+
+
+[掘金](https://juejin.im/extension/?utm_source=extension&utm_medium=zhihu&utm_campaign=20595240)：在新标签页展示内容，为设计师、程序员、产品经理每日发现优质内容。与[遠方 New Tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn)冲突。
+
+[Send to Kindle](https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan):一键发送网页文章到Kindle阅读器。
 
 [chrome有哪些好用的插件](https://www.zhihu.com/question/23228162)
 
