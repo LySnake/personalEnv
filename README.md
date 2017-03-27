@@ -150,7 +150,7 @@
 
 [易数一键还原](http://www.onekeyrestore.cn/):以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。
 
-[DiskGenius ](https://pan.baidu.com/s/1kTj3b75):国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.
+[DiskGenius ](http://www.diskgenius.cn/):国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.
 
 [EaseUS Data Recovery Wizard](http://www.0daydown.com/?s=EaseUS+Data+Recovery):原先是国产易我数据恢复，现在依旧犀利啊
 
