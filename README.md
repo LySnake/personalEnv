@@ -90,7 +90,7 @@
 
 [Gitter](https://gitter.im/apps):免费、开放的程序员沟通方式，所有的信息都可以免费永久保存。
 
-[TeamViewer](http://www.zdfans.com/789.html):远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
+[TeamViewer](https://www.teamviewer.com/zhcn/):远程控制，内网穿透，VPN共享，跨平台.对个人免费。操作方便，因为自带内网穿透，所以对于公司PC和宿舍PC可以方便远程，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
 [AnyDesk](https://anydesk.com/remote-desktop):远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
