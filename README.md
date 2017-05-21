@@ -18,8 +18,6 @@
 
 [Click&Clean](https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod):管理工具，可管理chrome，也可以管理PC设备。
 
-[JSON-handle](https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj):对JSON数据进行浏览、编辑。
-
 [Save to Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj):pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。
 
 [嗶哩嗶哩助手](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh):B站，看直播可自动化领取瓜子等。
@@ -60,8 +58,6 @@
 
 [Everything](https://www.voidtools.com/downloads/):windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。
 
-[fireworks](https://www.baidu.com/s?wd=fireworks+%E4%B8%8B%E8%BD%BD&rsv_spt=1&rsv_iqid=0xf94ef29b0001bede&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=1&inputT=2863&rsv_t=e853Q9HveOswQEHfDyTkBzQyMjtgAZ2NnNYVQ4VgTllOiJimVa6kuMlfFU0WTXwUXbbo&oq=fireworks&rsv_pq=b66f931b0001a3eb):前端切图工具。
-
 [SourceInsight](http://pan.baidu.com/s/1eSJZ9cu):多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。
 
 [UltraISO](http://pan.baidu.com/s/1hsHnIb6):打开ISO文件工具。
@@ -87,8 +83,6 @@
 [Clover](http://cn.ejie.me/):让windows系统的文件管理器像chrome一样，支持多标签页功能，但目前似乎开始有小广告了。
 
 [护眼宝](http://www.huyanbao.com)：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。
-
-[Gitter](https://gitter.im/apps):免费、开放的程序员沟通方式，所有的信息都可以免费永久保存。
 
 [TeamViewer](https://www.teamviewer.com/zhcn/):远程控制，内网穿透，VPN共享，跨平台.对个人免费。操作方便，因为自带内网穿透，所以对于公司PC和宿舍PC可以方便远程，来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
@@ -122,29 +116,6 @@
 [openwrt](https://github.com/softwaredownload/openwrt-fanqiang):实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，但未曾试用过。
 
 [更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
-### sublime text3插件 ##
-
-[BracketHighlighter](https://github.com/facelessuser/BracketHighlighter):用于匹配括号，引号和html标签。对于很长的代码很有用。安装好之后，不需要设置插件会自动生效。
-
-[emmet](https://github.com/sergeche/emmet-sublime):使用Sublime Text进行前端开发必不可少的插件它让编写HTML代码变得极其简单高效。
-
-[JsFormat](https://github.com/jdc0589/JsFormat):将JS格式化的插件。
-
-[Sublime-Better-Completion](https://github.com/Pleasurazy/Sublime-Better-Completion):JavaScript ,jQuery , Bootstrap 等js库的自动补全。
-
-[markdown-extended](https://github.com/jonschlinkert/sublime-markdown-extended):支持Markdown语法高亮。
-
-[SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements/tree/st3):是一款很实用的右键菜单增强插件。
-
-[Autoprefixer](https://github.com/sindresorhus/sublime-autoprefixer):这是一款CSS3私有前缀自动补全插件该插件使用CanIUse资料库，能精准判断哪些属性需要什么前缀与CssComb插件一样，该插件也需要系统已安装Node.js环境。
-
-[CSScomb](https://github.com/csscomb/sublime-csscomb):CSS属性排序。
-
-[ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8):支持 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的插件。
-
-[SublimeCodeIntel](https://github.com/jikeytang/sublime-text):支持跳转到变量、函数定义的功能，另外还有代码提示和自动补全的功能。
-
-[vue-syntax-highlight](https://github.com/vuejs/vue-syntax-highlight):支持vue框架的vue文件代码高亮。
 ### 数据备份恢复 ##
 数据备份软件来自[wsgzao的博客](https://wsgzao.github.io/post/windows/),没有使用过。
 
