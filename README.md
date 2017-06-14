@@ -115,6 +115,8 @@
 
 [openwrt](https://github.com/softwaredownload/openwrt-fanqiang):实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，但未曾试用过。
 
+[UZER.ME](https://uzer.me/):云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。
+
 [更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
 ### 数据备份恢复 ##
 数据备份软件来自[wsgzao的博客](https://wsgzao.github.io/post/windows/),没有使用过。
@@ -125,7 +127,19 @@
 
 [EaseUS Data Recovery Wizard](http://www.0daydown.com/?s=EaseUS+Data+Recovery):原先是国产易我数据恢复，现在依旧犀利啊
 
+### 有意思的工具 ###
 
+[WordArt](https://link.zhihu.com/?target=http%3A//WordArt.com)：WordArt是一个文字云的在线生成网站，用来作头像如何？
+
+[smallpdf](https://smallpdf.com/cn):PDF解决方法，转换成PPT、WORD加密等。
+
+[BenVista PhotoZoom Pro](http://www.dayanzai.me/photozoom.html)：图片的放大工具，对图片进行放大不会出现轻微马赛克的状况，能较好的保持原始图片的特色。
+
+[Rufus](http://rufus.akeo.ie/?locale=zh_CN):U盘启动盘制作软件,开源，免费，小巧（只有不到900多kb），多能（windows、linux，uefi、mbr，iso、dd全都能做）.
+
+[Sysinternals](https://technet.microsoft.com/en-us/sysinternals/bb842062):微软的Sysinternals系统管理工具包。里面有几十个小工具，用来检测和管理Windows。
+
+[SpaceSniffer](http://www.uderzo.it/main_products/space_sniffer/):查看磁盘各目录占用情况以图的形式展示。
 ### 其它网友环境 ##
 
 [wsgzao推荐的软件](https://wsgzao.github.io/post/windows/)。
