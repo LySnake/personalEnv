@@ -36,8 +36,13 @@
 
 [google翻译](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb):翻译网页或选中字词或短语时翻译。
 
-
 [Send to Kindle](https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan):一键发送网页文章到Kindle阅读器。
+
+[Isometric Contributions](https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien):让你在GitHub上的commit像盖楼一样的展示，很有趣，展示下Android大神Jake Wharton的commit情况。
+
+[Avatars for Github](https://github.com/anasnakawa/chrome-github-avatars):顾名思义，默认我们在GitHub主页动态只能看到id的，而安装了这个插件就可以看到GitHub头像了.
+
+[知乎头像放大器](https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN):把用户头像放大，比直接打开链接还要大。
 
 [chrome有哪些好用的插件](https://www.zhihu.com/question/23228162)
 
