@@ -95,6 +95,7 @@
 
 [licecap](http://www.cockos.com/licecap/):Gif文件录制工具。
 
+[IDA Pro](http://www.brothersoft.com/ida-pro-download-69919.html)：交互式反汇编器专业版（Interactive Disassembler Professional），人们常称其为IDA Pro，或简称为IDA。是目前最棒的一个静态反编译软件，为众多0day世界的成员和ShellCode安全分析人士不可缺少的利器！
 
 *Powertool*:系统清理工具。
 
