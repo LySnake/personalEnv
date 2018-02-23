@@ -22,7 +22,7 @@
 
 [嗶哩嗶哩助手](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh):B站，看直播可自动化领取瓜子等。
 
-[擴充功能uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm):一款高效率的廣告攔截工具。
+[扩充功能uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm):一款高效率的廣告攔截工具。
 
 [遠方 New Tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn):打开一个新页面，背景图都是实时更新的美图。
 
@@ -113,7 +113,7 @@
 ---
 ## 其它 ##
 ### 云梯 ##
-[XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频。
+[XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，但是从17年下半年开始，要搭配IPv6。
 
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):免费情况下每月800M，速度还可以，搭建快速。
 
@@ -130,6 +130,7 @@
 [DiskGenius ](http://www.diskgenius.cn/):国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.
 
 [EaseUS Data Recovery Wizard](http://www.0daydown.com/?s=EaseUS+Data+Recovery):原先是国产易我数据恢复，现在依旧犀利啊
+
 
 ### 有意思的工具 ###
 
