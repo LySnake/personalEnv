@@ -108,7 +108,13 @@
 
 [zsh](https://github.com/robbyrussell/oh-my-zsh):更友好的shell(漂亮的themes，更多的输入匹配)。
 
-[vim](https://github.com/DemonCloud/Aix-Vim):linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。
+[vim](https://github.com/SpaceVim/SpaceVim):linux下最常用的编辑器，SpaceVim 是一个社区驱动的模块化 vim/neovim 配置集合，以模块的方式组织管理插件以 及相关配置，为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱 即用的Vim-IDE。
+
+[SQL Server for ubuntu](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu):ubuntu 16.04版本上安装SQL Server。
+
+[thefuck](https://github.com/nvbn/thefuck):命令行自动处理人为命令错误，fuck.
+
+[vscode for linux](https://code.visualstudio.com/docs/setup/linux):linux上的vscode版本。
 
 ---
 ## 其它 ##

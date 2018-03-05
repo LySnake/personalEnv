@@ -94,12 +94,3 @@ source $ZSH/oh-my-zsh.sh
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    #WorkPath=/mnt/hgfs/pos
-	#alias pos='cd ${WorkPath}/Develop/new_app'
-	alias pos='cd /mnt/hgfs/pos/BJYF_北京友付/POS_BJYF/Develop/new_app/'
-	#alias mk='${WorkPath}/Develop/new_app/make8210E.sh'
-    alias tmp='cd /mnt/share/tmp'
-    #工作项目各个路径的alias
-    alias qhjl='cd /mnt/pos/QHJL_前海捷联'
-    alias gzdw='cd /mnt/pos/GZDW_POS/Develop/new_app/'
-    alias std='cd /mnt/pos/标准代码/'
