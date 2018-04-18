@@ -49,6 +49,9 @@
 ---
 
 ## windows ##
+
+[最强IDE Visual Studio](https://msdn.itellyou.cn/):最强IDE，开发、调试功能强大，另外，对于某些语言的代码高亮，可以去[studiostyl](https://studiostyl.es)下载配置。如果无法下载，查看网页源码手动跳转到下载链接。
+
 [如何优雅使用windows 10](https://www.zhihu.com/question/32129337):来自zhihu的问答。
 
 [Atom](https://atom.io/)：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。
