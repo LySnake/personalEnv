@@ -50,7 +50,7 @@
 
 ## windows ##
 
-[最强IDE Visual Studio](https://msdn.itellyou.cn/):最强IDE，开发、调试功能强大，另外，对于某些语言的代码高亮，可以去[studiostyl](https://studiostyl.es)下载配置。如果无法下载，查看网页源码手动跳转到下载链接。
+[最强IDE Visual Studio](https://msdn.itellyou.cn/):最强IDE，开发、调试功能强大，另外，对于某些语言的代码高亮，可以去[studiostyl](https://studiostyl.es)下载配置。如果无法下载，查看网页源码手动跳转到下载链接。另外，C++代码选择**Visual Assist**插件来增强跳转、搜索等功能。
 
 [如何优雅使用windows 10](https://www.zhihu.com/question/32129337):来自zhihu的问答。
 
