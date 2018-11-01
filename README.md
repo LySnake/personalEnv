@@ -9,8 +9,9 @@
 
 ---
 
-## chrome ## 
-**插件**
+## 软件配置 ## 
+
+### Chrome插件 ###
 
 [如何高效地使用搜索引擎？](https://www.zhihu.com/question/28013848)：来自zhihu的问答。
 
@@ -45,6 +46,30 @@
 [知乎头像放大器](https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN):把用户头像放大，比直接打开链接还要大。
 
 [chrome有哪些好用的插件](https://www.zhihu.com/question/23228162)
+
+---
+
+### vscode ###
+
+[vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons):让你的工程文件可以通过icon查看文件类型
+
+[One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme): 很喜欢的一款主题，一天就从默认的其它主题切换过来了
+
+[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify): 快速格式化你的代码格式
+
+[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):ESLint 是一个语法规则和代码风格的检查工具，可以用来保证写出语法正确、风格统一的代码
+
+[Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner):以让你不用搭建各种语言的开发环境，直接通过此插件就可以直接运行对应语言的代码，非常适合学习或测试各种开发语言
+
+[Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis):而且注释也应该有一套标准的注释方法，特别对于 JavaScript 这种语言
+
+[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight):让todo高亮
+
+---
+
+### Visual Studio ###
+
+[Visual Assist](pan.baidu.com):存在个人百度盘，破解版本。可以更方便的查看编写C++
 
 ---
 
