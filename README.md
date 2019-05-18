@@ -125,6 +125,18 @@
 
 [IDA Pro](http://www.brothersoft.com/ida-pro-download-69919.html)：交互式反汇编器专业版（Interactive Disassembler Professional），人们常称其为IDA Pro，或简称为IDA。是目前最棒的一个静态反编译软件，为众多0day世界的成员和ShellCode安全分析人士不可缺少的利器！
 
+[系统环境变量修改器](https://www.rapidee.com/en/about):更简洁快捷的windows环境变量修改软件。
+
+[cmder](https://cmder.net/):windows更友善的cmd终端软件。
+
+[Procmon进程追踪](https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite):进程追踪，对等Linux中的strace，可以看到每一个系统调用，包括输入参数，是否成功等。这个工具来自Sysinternals，微软的工具套装，很多有用的小工具，有兴趣可以下载下来玩一遍[sysinternals](https://docs.microsoft.com/zh-cn/sysinternals/downloads/)。
+
+[process explore](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer):免费的增强型任务管理器.
+
+[QuickLook](https://pooi.moe/QuickLook/):选中文件空格就可以查看。可以查看文件夹信息，图片信息，html 信息，pdf 信息，word 信息，视频信息，压缩包信息。
+
+[winscp](https://winscp.net/eng/docs/lang:chs):Windows 环境下使用的 SSH 的开源图形化 SFTP 客户端。同时支持 SCP 协议。它的主要功能是在本地与远程计算机间安全地复制文件，并且可以直接编辑文件。
+
 *Powertool*:系统清理工具。
 
 *其它*：进个人_百度网盘_查找。
