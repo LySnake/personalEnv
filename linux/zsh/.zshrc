@@ -8,8 +8,9 @@
 #ZSH_THEME="aussiegeek"
 #ZSH_THEME="gnzh"
 #ZSH_THEME="rkj-repos"
-ZSH_THEME="xiong-chiamiov-plus"
+#ZSH_THEME="xiong-chiamiov-plus"
 #ZSH_THEME="agnoster"
+#ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
  CASE_SENSITIVE="true"
