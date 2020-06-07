@@ -65,11 +65,29 @@
 
 [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight):让todo高亮
 
+[Chinese (Simplified) Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans):vscode汉化包
+
+[background](https://marketplace.visualstudio.com/items?itemName=shalldie.background):为vscode添加背景图，默认有一个动漫小女孩。
+
+[C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools):C/C++源码解析，debuggin，代码浏览。
+
+[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome):chrome运行时debug插件，可以使用vscode高度cocoscreator的工程。
+
+[Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory):git 历史查看工具，可以在记录文档中，显示上次修改人员。
+
+
+[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one):Markdown在vscode上支持的插件，可以在vscode上编辑Markdown文件和编辑时预览效果。
+
+[PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell):PowerShell在vscode上的支持。
+
+[translate](https://marketplace.visualstudio.com/items?itemName=chun.vscode-translate):vscode上的翻译插件
+
+
 ---
 
 ### Visual Studio ###
 
-[Visual Assist](pan.baidu.com):存在个人百度盘，破解版本。可以更方便的查看编写C++
+[Visual Assist](pan.baidu.com):存在个人百度盘，破解版本。可以更方便的查看编写C++。
 
 ---
 
@@ -140,6 +158,19 @@
 *Powertool*:系统清理工具。
 
 *其它*：进个人_百度网盘_查找。
+
+
+---
+
+## 游戏开发 ##
+
+[ShoeBox](http://renderhjs.net/shoebox/):ShoeBox一个超级好用的图片切割工具,可以制作位图字。拆图(plist合图，可以使用网络上的python脚本拆图。)
+
+[texturepacker](https://www.codeandweb.com/texturepacker):最好的Sprite Sheet生成工具。可以生成plist合图。
+
+[Spine Trial](http://zh.esotericsoftware.com/spine-quickstart):2D骨骼动画编辑软件。
+
+[cocos](http://cocos.org):开源的游戏引擎。
 
 
 ---
