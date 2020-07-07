@@ -157,6 +157,8 @@
 
 [ultraedit](https://www.ultraedit.com/downloads/ultraedit-download/):主要用于windows下16进制读文件方便。
 
+[sysinternals](https://docs.microsoft.com/en-us/sysinternals/):整套Sysinternals实用程序汇总为一个下载。windows下的工具集套件。
+
 *Powertool*:系统清理工具。
 
 *其它*：进个人_百度网盘_查找。
