@@ -155,6 +155,8 @@
 
 [winscp](https://winscp.net/eng/docs/lang:chs):Windows 环境下使用的 SSH 的开源图形化 SFTP 客户端。同时支持 SCP 协议。它的主要功能是在本地与远程计算机间安全地复制文件，并且可以直接编辑文件。
 
+[ultraedit](https://www.ultraedit.com/downloads/ultraedit-download/):主要用于windows下16进制读文件方便。
+
 *Powertool*:系统清理工具。
 
 *其它*：进个人_百度网盘_查找。
