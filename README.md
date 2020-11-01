@@ -157,6 +157,8 @@
 
 [winscp](https://winscp.net/eng/docs/lang:chs):Windows 环境下使用的 SSH 的开源图形化 SFTP 客户端。同时支持 SCP 协议。它的主要功能是在本地与远程计算机间安全地复制文件，并且可以直接编辑文件。
 
+[MobaXterm](https://mobaxterm.mobatek.net/):MobaXterm为Windows桌面提供所有重要的远程网络工具（SSH，X11，RDP，VNC，FTP，MOSH等）和Unix命令（bash，ls，cat，sed，grep，awk，rsync等）。 可直接使用.
+
 [ultraedit](https://www.ultraedit.com/downloads/ultraedit-download/):主要用于windows下16进制读文件方便。
 
 [sysinternals](https://docs.microsoft.com/en-us/sysinternals/):整套Sysinternals实用程序汇总为一个下载。windows下的工具集套件。
