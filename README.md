@@ -105,6 +105,8 @@
 
 [Everything](https://www.voidtools.com/downloads/):windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。
 
+[AnyTXT Searcher](https://sourceforge.net/projects/anytxt/):windows下，文本内容索引检索,Everything支持内容检索，但是对内容检索不提供建立索引，所以慢，AnyTxt Searcher建立索引。
+
 [SourceInsight](http://pan.baidu.com/s/1eSJZ9cu):多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。
 
 [UltraISO](http://pan.baidu.com/s/1hsHnIb6):打开ISO文件工具。
