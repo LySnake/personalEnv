@@ -107,6 +107,8 @@
 
 [AnyTXT Searcher](https://sourceforge.net/projects/anytxt/):windows下，文本内容索引检索,Everything支持内容检索，但是对内容检索不提供建立索引，所以慢，AnyTxt Searcher建立索引。
 
+[Understand](https://www.scitools.com/free-trial):程序员评论中，功能使用上比SourceInsight更强大的静态代码分析的IDE工具，还是没有SourceInsight那么好的代码高亮与UI界面，主要是强在代码分析，正版软件很贵，网上对于5.x版本有破解且支持多平台。
+
 [SourceInsight](http://pan.baidu.com/s/1eSJZ9cu):多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。
 
 [UltraISO](http://pan.baidu.com/s/1hsHnIb6):打开ISO文件工具。
