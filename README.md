@@ -174,19 +174,6 @@
 
 ---
 
-## 游戏开发 ##
-
-[ShoeBox](http://renderhjs.net/shoebox/):ShoeBox一个超级好用的图片切割工具,可以制作位图字。拆图(plist合图，可以使用网络上的python脚本拆图。)
-
-[texturepacker](https://www.codeandweb.com/texturepacker):最好的Sprite Sheet生成工具。可以生成plist合图。
-
-[Spine Trial](http://zh.esotericsoftware.com/spine-quickstart):2D骨骼动画编辑软件。
-
-[cocos](http://cocos.org):开源的游戏引擎。
-
-
----
-
 ## linux ##
 
 [zsh](https://github.com/robbyrussell/oh-my-zsh):更友好的shell(漂亮的themes，更多的输入匹配)。
