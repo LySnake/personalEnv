@@ -57,8 +57,6 @@
 
 [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify): 快速格式化你的代码格式
 
-[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):ESLint 是一个语法规则和代码风格的检查工具，可以用来保证写出语法正确、风格统一的代码
-
 [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner):以让你不用搭建各种语言的开发环境，直接通过此插件就可以直接运行对应语言的代码，非常适合学习或测试各种开发语言
 
 [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis):而且注释也应该有一套标准的注释方法，特别对于 JavaScript 这种语言
@@ -80,7 +78,9 @@
 
 [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell):PowerShell在vscode上的支持。
 
-[translate](https://marketplace.visualstudio.com/items?itemName=chun.vscode-translate):vscode上的翻译插件
+[translate](https://marketplace.visualstudio.com/items?itemName=chun.vscode-translate):vscode上的翻译插件.
+
+[sftp](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp):本地与远端同步文件，修改保存即可同步，对大项目不太合适，同步存在问题，配置文件上可以一个项目选择同步不同的远端。
 
 
 ---
@@ -155,7 +155,7 @@
 
 [Procmon进程追踪](https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite):进程追踪，对等Linux中的strace，可以看到每一个系统调用，包括输入参数，是否成功等。这个工具来自Sysinternals，微软的工具套装，很多有用的小工具，有兴趣可以下载下来玩一遍[sysinternals](https://docs.microsoft.com/zh-cn/sysinternals/downloads/)。
 
-[process explore](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer):免费的增强型任务管理器.
+[Process Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer):是一款功能完备、简单易用的任务资源管理器，ProcessExplorer官方版可以在第一时间让你掌握系统正在运行的任务。从当前进程到已经安装的驱动程序，包括网络连接，系统启动运行程序，IE插件等等。使用这款Process Explorer能让使用者能了解看不到的在后台执行的处理程序，分别看到是哪些程序正在被使用。
 
 [QuickLook](https://pooi.moe/QuickLook/):选中文件空格就可以查看。可以查看文件夹信息，图片信息，html 信息，pdf 信息，word 信息，视频信息，压缩包信息。
 
@@ -166,6 +166,10 @@
 [ultraedit](https://www.ultraedit.com/downloads/ultraedit-download/):主要用于windows下16进制读文件方便。
 
 [sysinternals](https://docs.microsoft.com/en-us/sysinternals/):整套Sysinternals实用程序汇总为一个下载。windows下的工具集套件。
+
+[honeyview](https://www.bandisoft.com/honeyview/):Honeyview 是一款快速的图片查看器,主要是免费,且没有广告。
+
+[Ditto](https://ditto-cp.sourceforge.io/index.php):Ditto是一个免费剪贴板增强工具。支持网络同步，记录分组，名称粘贴等多种功能。小巧却又强大易用。可以将剪贴板中，文字，图片， HTML，自定义格式粘贴。
 
 *Powertool*:系统清理工具。
 
