@@ -97,8 +97,6 @@
 
 [如何优雅使用windows 10](https://www.zhihu.com/question/32129337):来自zhihu的问答。
 
-[Atom](https://atom.io/)：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。
-
 [BCompare](http://www.scootersoftware.com/download.php)：跨平台的文件比较工具。
 
 [EasyBCD](http://download.pchome.net/system/treak/detail-4359.html):修改PC上多个系统引导程序，选择默认系统引导。
