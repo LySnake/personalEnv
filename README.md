@@ -169,7 +169,11 @@
 
 [Ditto](https://ditto-cp.sourceforge.io/index.php):Ditto是一个免费剪贴板增强工具。支持网络同步，记录分组，名称粘贴等多种功能。小巧却又强大易用。可以将剪贴板中，文字，图片， HTML，自定义格式粘贴。
 
-*Powertool*:系统清理工具。
+[Dependency Walker](https://dependencywalker.com/):可扫描任何 32 位或 64 位 Windows 模块（exe、dll、ocx、sys 等）并构建所有依赖模块的层次树图。对于找到的每个模块，它会列出该模块导出的所有函数，以及其他模块实际调用了哪些函数。另一个视图显示所需文件的最少集合，以及每个文件的详细信息，包括文件的完整路径、基址、版本号、机器类型、调试信息等。
+
+[Resource Hacker](http://angusj.com/resourcehacker/):用于察看、反汇编和取代Windows32位可执行程序中的资源，支持Delphi5和C++Builder。其实它虽然能保存资源但实际上只能直接修改图标和光标，而其他资源必须先导出保存为相应的文件用其他工具修改后才能导回保存，在这一点上它比不上eXeScope，但可以将它作为一个小巧的资源察看器.
+
+*Powertool*:
 
 *其它*：进个人_百度网盘_查找。
 
