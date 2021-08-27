@@ -89,6 +89,10 @@
 
 [Visual Assist](pan.baidu.com):存在个人百度盘，破解版本。可以更方便的查看编写C++。
 
+[Format on Save](https://marketplace.visualstudio.com/items?itemName=WinstonFeng.FormatonSave):用于当保存文件时，对文件做相应处理，比如:修改所有文件为UTF-8带签名，table转成space等，也支持批量处理。
+
+[跨平台开发](https://blog.csdn.net/u010472607/article/details/86484818):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.
+
 ---
 
 ## windows ##
