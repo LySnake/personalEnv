@@ -23,8 +23,6 @@
 
 [嗶哩嗶哩助手](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh):B站，看直播可自动化领取瓜子等。
 
-[扩充功能uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm):一款高效率的廣告攔截工具。
-
 [遠方 New Tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn):打开一个新页面，背景图都是实时更新的美图。
 
 [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc):在[github](www.github.com)上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。
@@ -32,8 +30,6 @@
 [WEB前端助手(FeHelper)](https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN):前端会用到的小工具。
 
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo):很强大的插件，允许运行JS充当功能，相关JS文件可以去[Greasy Fork](https://greasyfork.org/zh-CN)下载，比如一些特殊网站的JS，让zhihu更加清爽。
-
-[Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN):游览网站像操作vim一样操作。
 
 [google翻译](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb):翻译网页或选中字词或短语时翻译。
 
@@ -204,8 +200,6 @@
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):免费情况下每月800M，速度还可以，搭建快速。
 
 [openwrt](https://github.com/softwaredownload/openwrt-fanqiang):实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，但未曾试用过。
-
-[UZER.ME](https://uzer.me/):云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。
 
 [更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
 ### 数据备份恢复 ##
