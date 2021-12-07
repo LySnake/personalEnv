@@ -17,13 +17,9 @@
 
 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif):来自[XX-Net](https://github.com/XX-net/XX-Net),插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。
 
-[Click&Clean](https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod):管理工具，可管理chrome，也可以管理PC设备。
-
 [Save to Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj):pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。
 
 [嗶哩嗶哩助手](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh):B站，看直播可自动化领取瓜子等。
-
-[遠方 New Tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn):打开一个新页面，背景图都是实时更新的美图。
 
 [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc):在[github](www.github.com)上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。
 
@@ -125,9 +121,7 @@
 
 [Listary](http://www.listary.com/):如功能和Wox一样，但是匹配没有Wox好。来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
-[Ubuntu on Windows](http://www.xitongcheng.com/jiaocheng/win10_article_27723.html):在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。
-
-[Gvim](http://www.vim.org/download.php):win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)
+[Ubuntu on Windows](http://www.xitongcheng.com/jiaocheng/win10_article_27723.html):在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。另外，可以把该系统安装在其它分区，方法是下载到ubuntu的*.appx文件后，直接解压下来，把**install.tar.gz**和**ubuntu2004.exe**移到另一空目录下，运行**ubuntu2004.exe**即可在当前目录安装。
 
 [五笔](http://pan.baidu.com/s/1i5yUJM9):使用QQ五笔输入法，但使用新世纪版字根与字库。
 
