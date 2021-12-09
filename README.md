@@ -23,6 +23,10 @@
 
 [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc):在[github](www.github.com)上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。
 
+[Sourcegraph](https://chrome.google.com/webstore/detail/sourcegraph/dgjhfomjieaadpoljlnidmbgkdffpack?hl=zh-CN):传说比**Octotree**更强的github浏览工具，支持文件树浏览和Github Jump to definition的定义跳转功能，而且还支持Jump to reference引用跳转。
+
+[GitZip](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn?hl=zh-CN):下载仓库中部分代码.
+
 [WEB前端助手(FeHelper)](https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN):前端会用到的小工具。
 
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo):很强大的插件，允许运行JS充当功能，相关JS文件可以去[Greasy Fork](https://greasyfork.org/zh-CN)下载，比如一些特殊网站的JS，让zhihu更加清爽。
@@ -178,7 +182,7 @@
 
 [zsh](https://github.com/robbyrussell/oh-my-zsh):更友好的shell(漂亮的themes，更多的输入匹配)。
 
-[vim](https://github.com/SpaceVim/SpaceVim):linux下最常用的编辑器，SpaceVim 是一个社区驱动的模块化 vim/neovim 配置集合，以模块的方式组织管理插件以 及相关配置，为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱 即用的Vim-IDE。
+[vim SpaceVim](https://github.com/SpaceVim/SpaceVim):linux下最常用的编辑器，SpaceVim 是一个社区驱动的模块化 vim/neovim 配置集合，以模块的方式组织管理插件以 及相关配置，为不同的语言开发量身定制了相关的开发模块，该模块提供代码自动补全， 语法检查、格式化、调试、REPL 等特性。用户仅需载入相关语言的模块即可得到一个开箱 即用的Vim-IDE。
 
 [SQL Server for ubuntu](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu):ubuntu 16.04版本上安装SQL Server。
 
@@ -193,7 +197,7 @@
 
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):免费情况下每月800M，速度还可以，搭建快速。
 
-[openwrt](https://github.com/softwaredownload/openwrt-fanqiang):实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，但未曾试用过。
+[openwrt](https://github.com/softwaredownload/openwrt-fanqiang):其实就是linux的一个针对路由器的分发版本，有特定的RPC服务和UCI统一配置服务，提供路由器的web界面配置。
 
 [更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
 ### 数据备份恢复 ##
