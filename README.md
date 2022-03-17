@@ -89,7 +89,10 @@
 
 [Format on Save](https://marketplace.visualstudio.com/items?itemName=WinstonFeng.FormatonSave):用于当保存文件时，对文件做相应处理，比如:修改所有文件为UTF-8带签名，table转成space等，也支持批量处理。
 
-[跨平台开发](https://blog.csdn.net/u010472607/article/details/86484818):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.
+[VS 跨平台开发](https://blog.csdn.net/u010472607/article/details/86484818):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说是半残废状态，估计是支持的完整度不高。
+
+
+[clion 跨平台开发](clion ):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说比VS的远程调用gdb更强大。
 
 ---
 
