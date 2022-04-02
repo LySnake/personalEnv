@@ -1,17 +1,13 @@
-
 ---
-
 ## 目录 ##
  * [chrome](#chrome)
  * [windows](#windows)
  * [linux](#linux)
  * [其它](#其它)
-
 ---
+## 软件配置
 
-## 软件配置 ## 
-
-### Chrome插件 ###
+### Chrome插件
 
 [如何高效地使用搜索引擎？](https://www.zhihu.com/question/28013848)：来自zhihu的问答。
 
@@ -45,7 +41,7 @@
 
 ---
 
-### vscode ###
+### vscode
 
 [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons):让你的工程文件可以通过icon查看文件类型
 
@@ -69,8 +65,7 @@
 
 [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory):git 历史查看工具，可以在记录文档中，显示上次修改人员。
 
-
-[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one):Markdown在vscode上支持的插件，可以在vscode上编辑Markdown文件和编辑时预览效果。
+[Office Viewer](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-office):这是一个markdown插件
 
 [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell):PowerShell在vscode上的支持。
 
@@ -78,10 +73,9 @@
 
 [sftp](https://marketplace.visualstudio.com/items?itemName=liximomo.sftp):本地与远端同步文件，修改保存即可同步，对大项目不太合适，同步存在问题，配置文件上可以一个项目选择同步不同的远端。
 
-
 ---
 
-### Visual Studio ###
+### Visual Studio
 
 [Visual Assist](pan.baidu.com):存在个人百度盘，破解版本。可以更方便的查看编写C++。
 
@@ -91,12 +85,11 @@
 
 [VS 跨平台开发](https://blog.csdn.net/u010472607/article/details/86484818):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说是半残废状态，估计是支持的完整度不高。
 
-
-[clion 跨平台开发](clion ):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说比VS的远程调用gdb更强大。
+[clion 跨平台开发](clion):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说比VS的远程调用gdb更强大。
 
 ---
 
-## windows ##
+## windows
 
 [最强IDE Visual Studio](https://msdn.itellyou.cn/):最强IDE，开发、调试功能强大，另外，对于某些语言的代码高亮，可以去[studiostyl](https://studiostyl.es)下载配置。如果无法下载，查看网页源码手动跳转到下载链接。另外，C++代码选择**Visual Assist**插件来增强跳转、搜索等功能。
 
@@ -180,10 +173,9 @@
 
 *其它*：进个人_百度网盘_查找。
 
-
 ---
 
-## linux ##
+## linux
 
 [zsh](https://github.com/robbyrussell/oh-my-zsh):更友好的shell(漂亮的themes，更多的输入匹配)。
 
@@ -196,8 +188,11 @@
 [vscode for linux](https://code.visualstudio.com/docs/setup/linux):linux上的vscode版本。
 
 ---
-## 其它 ##
-### 云梯 ##
+
+## 其它
+
+### 云梯
+
 [XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，但是从17年下半年开始，要搭配IPv6。
 
 [蓝灯(Lantern)](https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD):免费情况下每月800M，速度还可以，搭建快速。
@@ -205,7 +200,9 @@
 [openwrt](https://github.com/softwaredownload/openwrt-fanqiang):其实就是linux的一个针对路由器的分发版本，有特定的RPC服务和UCI统一配置服务，提供路由器的web界面配置。
 
 [更多方案](https://wsgzao.github.io/post/fq/):这里罗列的方案，大都末使用过。
-### 数据备份恢复 ##
+
+### 数据备份恢复
+
 数据备份软件来自[wsgzao的博客](https://wsgzao.github.io/post/windows/),没有使用过。
 
 [易数一键还原](http://www.onekeyrestore.cn/):以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。
@@ -214,8 +211,7 @@
 
 [EaseUS Data Recovery Wizard](http://www.0daydown.com/?s=EaseUS+Data+Recovery):原先是国产易我数据恢复，现在依旧犀利啊
 
-
-### 有意思的工具 ###
+### 有意思的工具
 
 [WordArt](https://link.zhihu.com/?target=http%3A//WordArt.com)：WordArt是一个文字云的在线生成网站，用来作头像如何？
 
@@ -228,7 +224,7 @@
 [Sysinternals](https://technet.microsoft.com/en-us/sysinternals/bb842062):微软的Sysinternals系统管理工具包。里面有几十个小工具，用来检测和管理Windows。
 
 [SpaceSniffer](http://www.uderzo.it/main_products/space_sniffer/):查看磁盘各目录占用情况以图的形式展示。
-### 其它网友环境 ##
+
+### 其它网友环境
 
 [wsgzao推荐的软件](https://wsgzao.github.io/post/windows/)。
-
