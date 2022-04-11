@@ -171,6 +171,8 @@
 
 *Powertool*:
 
+[Geek Uninstaller](geekuninstaller.com/):卸载软件:如果因为某些原因卸载不了(估计是注册表的问题)，实际已经卸载的情况，可以通过这个软件，小巧又Free.
+
 *其它*：进个人_百度网盘_查找。
 
 ---
