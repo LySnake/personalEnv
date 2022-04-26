@@ -193,6 +193,10 @@
 
 ## 其它
 
+### 访问Github
+
+[SwitchHosts](https://github.com/oldj/SwitchHosts):一款修改本地hosts文件，以便用来有效访问github网站，另外支持随时更新hosts文件内容到最新。
+
 ### 云梯
 
 [XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，但是从17年下半年开始，要搭配IPv6。
