@@ -113,17 +113,23 @@
 
 [VMware](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=2&ch=&tn=baiduhome_pg&bar=&wd=VMware+%E4%B8%8B%E8%BD%BD&rsv_spt=1&oq=fireworks+%E4%B8%8B%E8%BD%BD&rsv_pq=fe1db2c5000198ef&rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&rqlang=cn&rsv_enter=0&inputT=3987):虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。
 
+[docker](https://www.docker.com/):相对于虚拟机，使用docker隔离linux下的开发环境、安装环境等，更轻便与简单。
+
+[Windows subsystem](http://www.xitongcheng.com/jiaocheng/win10_article_27723.html):在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。另外，可以把该系统安装在其它分区，方法是下载到ubuntu的*.appx文件后，直接解压下来，把**install.tar.gz**和**ubuntu2004.exe**移到另一空目录下，运行**ubuntu2004.exe**即可在当前目录安装。
+
+[Windows Terminal](https://learn.microsoft.com/zh-cn/windows/terminal/install):windows官方商店的终端,能默认启动即进入 windows subsystem中的控制台。
+
 [硕鼠](http://download.flvcd.com/):支持多个网站的在线视频下载。
 
 [网易云音乐](http://music.163.com/):美观、友好、歌曲推荐算法强。
+
+[PotPlayer](https://potplayer.daum.net/):太多视频播放器要钱了，这是开源的视频播放器。
 
 [FoxMail](http://foxmail.com.cn/):本地mail客户端。
 
 [Wox](https://github.com/Wox-launcher/Wox/releases):功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。
 
 [Listary](http://www.listary.com/):如功能和Wox一样，但是匹配没有Wox好。来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
-
-[Ubuntu on Windows](http://www.xitongcheng.com/jiaocheng/win10_article_27723.html):在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。另外，可以把该系统安装在其它分区，方法是下载到ubuntu的*.appx文件后，直接解压下来，把**install.tar.gz**和**ubuntu2004.exe**移到另一空目录下，运行**ubuntu2004.exe**即可在当前目录安装。
 
 [五笔](http://pan.baidu.com/s/1i5yUJM9):使用QQ五笔输入法，但使用新世纪版字根与字库。
 
@@ -144,8 +150,6 @@
 [IDA Pro](http://www.brothersoft.com/ida-pro-download-69919.html)：交互式反汇编器专业版（Interactive Disassembler Professional），人们常称其为IDA Pro，或简称为IDA。是目前最棒的一个静态反编译软件，为众多0day世界的成员和ShellCode安全分析人士不可缺少的利器！
 
 [系统环境变量修改器](https://www.rapidee.com/en/about):更简洁快捷的windows环境变量修改软件。
-
-[cmder](https://cmder.net/):windows更友善的cmd终端软件。
 
 [Procmon进程追踪](https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite):进程追踪，对等Linux中的strace，可以看到每一个系统调用，包括输入参数，是否成功等。这个工具来自Sysinternals，微软的工具套装，很多有用的小工具，有兴趣可以下载下来玩一遍[sysinternals](https://docs.microsoft.com/zh-cn/sysinternals/downloads/)。
 
@@ -198,6 +202,8 @@
 [SwitchHosts](https://github.com/oldj/SwitchHosts):一款修改本地hosts文件，以便用来有效访问github网站，另外支持随时更新hosts文件内容到最新。
 
 ### 云梯
+
+[一元机场](https://xn--4gq62f52gdss.com/#/dashboard):需要支付，但相对很便宜。一个季度15元的**传世珍宝**套餐稳定性也不错，够用了。至于太便宜的12元的**传家宝**套餐，稳定性不够，经常要刷新配置。
 
 [XX-Net](https://github.com/XX-net/XX-Net)：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，但是从17年下半年开始，要搭配IPv6。
 
