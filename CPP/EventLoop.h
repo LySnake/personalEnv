@@ -1,12 +1,3 @@
-/*
- * @Descripttion: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: weiqi
- * @Date: 2022-11-30 20:04:59
- * @LastEditors: litaobo
- * @LastEditTime: 2023-03-22 19:54:32
- */
-
 #ifndef EVENT_POOL_H
 #define EVENT_POOL_H
 
@@ -14,7 +5,7 @@
 
 #include "TaskScheduler.h"
 
-#define g_EventLoop joyrobot::EventLoop::get_instance()
+#define g_EventLoop zhengze::EventLoop::get_instance()
 
 // 主线程(调度器)
 #define MASTER_SCHEDULER 0
@@ -29,7 +20,7 @@
 #define g_SlaveScheduler  g_EventLoop.get(SLAVE_SCHEDULER)
 #endif
 
-namespace joyrobot
+namespace zhengze
 {
     class EventLoop
     {

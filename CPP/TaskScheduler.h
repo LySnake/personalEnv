@@ -1,12 +1,3 @@
-/*
- * @Descripttion: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: weiqi
- * @Date: 2022-11-30 20:04:59
- * @LastEditors: litaobo
- * @LastEditTime: 2023-05-30 16:10:10
- */
-
 #ifndef TASK_SCHEDULER_H
 #define TASK_SCHEDULER_H
 
@@ -33,7 +24,7 @@
  * 50ms左右，随着系统任务越来越多，可能因此精度变低"。
 *****************************************************/
 
-namespace joyrobot
+namespace zhengze
 {
     using namespace std::literals::chrono_literals;
 

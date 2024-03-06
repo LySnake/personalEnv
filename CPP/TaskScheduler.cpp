@@ -1,11 +1,3 @@
-/*
- * @Description: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: litaobo
- * @Date: 2023-03-15 17:38:26
- * @LastEditors: litaobo
- * @LastEditTime: 2023-05-30 16:09:09
- */
 #include <cstdlib>
 #include <errno.h>
 #include <sys/eventfd.h>
@@ -14,16 +6,11 @@
 #include <string.h>
 
 
-#include <adk/utils/logger.h>
-#include <adk/utils/utils.h>
-
 #include "utils.h"
 #include "TaskScheduler.h"
 
-#undef TAG
-#define TAG "common.TaskScheduler"
 
-namespace joyrobot
+namespace zhengze
 {
     uint8_t TaskScheduler::count = 0;
 

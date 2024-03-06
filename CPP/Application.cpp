@@ -1,11 +1,3 @@
-/*
- * @Description: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: litaobo
- * @Date: 2023-04-07 12:23:07
- * @LastEditors: litaobo
- * @LastEditTime: 2023-09-15 14:30:58
- */
 #include <cxxabi.h>
 #include <execinfo.h>
 #include <signal.h>
@@ -21,18 +13,12 @@
 
 #include <absl/debugging/failure_signal_handler.h>
 #include <absl/debugging/stacktrace.h>
-// #include <absl/debugging/symbolize.h>
 
-#include <adk/utils/logger.h>
-
+#include "utils.h"
 #include "Application.h"
 #include "File.h"
 
 #define DEBUG_FLAG_FILE "/mnt/UDISK/debug.flag"
-
-
-#undef TAG
-#define TAG "common.Application"
 
 namespace {
     constexpr auto EXECABLE_DIR = "/mnt/app/bin/";
@@ -173,17 +159,17 @@ namespace {
 
     void processLoger(const bool is_debug_server)
     {
-        // 日志支持
-        if(is_debug_server){
-            joyrobot::Logger::set_debug_level(joyrobot::Logger::kDebugLevel);
-        } else{
-            joyrobot::Logger::set_debug_level(joyrobot::Logger::kInfoLevel);
-        }
-        // EasyLogger默认情况下只有debug等级有函数名和行号的打印，此处设置成所有打印等级都打印函数名和行号
-        size_t elog_flag = ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME | ELOG_FMT_FUNC | ELOG_FMT_LINE;
-        elog_set_fmt(ELOG_LVL_INFO, elog_flag);
-        elog_set_fmt(ELOG_LVL_WARN, elog_flag);
-        elog_set_fmt(ELOG_LVL_ERROR, elog_flag);
+        // // 日志支持
+        // if(is_debug_server){
+        //     zhengze::Logger::set_debug_level(zhengze::Logger::kDebugLevel);
+        // } else{
+        //     zhengze::Logger::set_debug_level(zhengze::Logger::kInfoLevel);
+        // }
+        // // EasyLogger默认情况下只有debug等级有函数名和行号的打印，此处设置成所有打印等级都打印函数名和行号
+        // size_t elog_flag = ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME | ELOG_FMT_FUNC | ELOG_FMT_LINE;
+        // elog_set_fmt(ELOG_LVL_INFO, elog_flag);
+        // elog_set_fmt(ELOG_LVL_WARN, elog_flag);
+        // elog_set_fmt(ELOG_LVL_ERROR, elog_flag);
     }
 
     void processCxxRuntimeError()
@@ -307,7 +293,7 @@ namespace {
     std::string getCommName()
     {
         std::string comm_name = "unknow";
-        joyrobot::File comm_file("/proc/self/comm");
+        zhengze::File comm_file("/proc/self/comm");
         comm_file.open(true, false);
 
         comm_file.readAll(comm_name);
@@ -316,7 +302,7 @@ namespace {
 }
 
 
-namespace joyrobot
+namespace zhengze
 {
     namespace Application
     {

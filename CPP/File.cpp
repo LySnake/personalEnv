@@ -1,12 +1,3 @@
-/*
- * @Descripttion: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: weiqi
- * @Date: 2022-11-30 20:04:59
- * @LastEditors: litaobo
- * @LastEditTime: 2023-05-10 15:24:23
- */
-
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -15,16 +6,12 @@
 #include <limits.h>
 
 
-#include <adk/utils/logger.h>
 
-#include "common/include/utils.h"
+#include "utils.h"
+#include "File.h"
 
-#include "common/include/File.h"
 
-#undef TAG
-#define TAG "common.File"
-
-namespace joyrobot
+namespace zhengze
 {
     File::File(const std::string &file_name):fd_{-1}, file_name_{file_name}
     {

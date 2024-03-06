@@ -1,19 +1,8 @@
-/*
- * @Description: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: litaobo
- * @Date: 2023-03-23 11:04:28
- * @LastEditors: litaobo
- * @LastEditTime: 2023-03-23 11:28:01
- */
-#include <adk/utils/logger.h>
 
+#include "utils.h"
 #include "EventLoop.h"
 
-#undef TAG
-#define TAG "common.EventLoop"
-
-namespace joyrobot
+namespace zhengze
 {
     EventLoop & EventLoop::get_instance()
     {

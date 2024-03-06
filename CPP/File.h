@@ -1,12 +1,3 @@
-/*
- * @Descripttion: Copyright (C) SHENZHEN JoyLife Robot Co.
- * @version: v0.01
- * @Author: litaobo
- * @Date: 2022-11-30 20:04:59
- * @LastEditors: litaobo
- * @LastEditTime: 2023-05-08 10:17:48
- */
-
 #ifndef FILE_H
 #define FILE_H
 
@@ -17,7 +8,7 @@
  * 类说明：对普通文件的读写等操作，包加少量的不局限于普通文件的操作
 *****************************************************/
 
-namespace joyrobot
+namespace zhengze
 {
     class File
     {
