@@ -13,9 +13,10 @@ RUN apt-get install iputils-ping net-tools \
                     curl wget unminimize man \
 					build-essential gdb cmake git \
                     manpages-de  manpages-de-dev  manpages-dev glibc-doc manpages-posix-dev manpages-posix manpages-zh \
+                    aptitude \
 					-y
 
-# RUN apt-get install python3 python3-pip
+# RUN apt-get install python3-full python3-pip
 
 
 RUN echo "man文档启用"
