@@ -15,6 +15,8 @@ RUN apt-get install iputils-ping net-tools \
                     manpages-de  manpages-de-dev  manpages-dev glibc-doc manpages-posix-dev manpages-posix manpages-zh \
 					-y
 
+# RUN apt-get install python3 python3-pip
+
 
 RUN echo "man文档启用"
 RUN yes | unminimize
