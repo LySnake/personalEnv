@@ -10,7 +10,7 @@ RUN apt-get upgrade -y
 
 RUN echo "安装相关软件"
 RUN apt-get install iputils-ping net-tools \
-                    curl wget unminimize man \
+                    curl wget unminimize man vim \
 					build-essential gdb cmake git \
                     manpages-de  manpages-de-dev  manpages-dev glibc-doc manpages-posix-dev manpages-posix manpages-zh \
                     aptitude \
