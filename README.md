@@ -95,7 +95,9 @@
 
 [如何优雅使用windows 10](https://www.zhihu.com/question/32129337):来自zhihu的问答。
 
-[BCompare](http://www.scootersoftware.com/download.php)：跨平台的文件比较工具。
+[Beyond Compare](http://www.scootersoftware.com/download.php)：跨平台的文件比较工具,要收费，需要找破解版本。
+
+[winmerge](https://github.com/WinMerge/winmerge/tree/master)：开源的比较、合并界面工具。
 
 [EasyBCD](http://download.pchome.net/system/treak/detail-4359.html):修改PC上多个系统引导程序，选择默认系统引导。
 
