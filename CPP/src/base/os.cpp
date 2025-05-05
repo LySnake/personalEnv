@@ -66,22 +66,25 @@ namespace os
         {
             frame_info = strings[i];
 
-            LOG_INFO("frame_info: %s.", frame_info.c_str());
+            // LOG_INFO("frame_info: %s.", frame_info.c_str());
             auto symbol_start = frame_info.find("(");
-            auto symbol_end = frame_info.find("+");
 
-            if (symbol_start != std::string::npos && symbol_end != std::string::npos)
+            if (symbol_start != std::string::npos)
             {
-                symbol_start++;
-                auto symbol = frame_info.substr(symbol_start, symbol_end - symbol_start);
-
-                int status = 0;
-                char *ret = abi::__cxa_demangle(symbol.c_str(), demangled, &len, &status);
-                if (status == 0)
+                auto symbol_end = frame_info.find("+", symbol_start);
+                if (symbol_end != std::string::npos)
                 {
-                    demangled = ret; // ret could be realloc()
-                    frame_info += " ";
-                    frame_info += demangled;
+                    symbol_start++;
+                    auto symbol = frame_info.substr(symbol_start, symbol_end - symbol_start);
+
+                    int status = 0;
+                    char *ret = abi::__cxa_demangle(symbol.c_str(), demangled, &len, &status);
+                    if (status == 0)
+                    {
+                        demangled = ret; // ret could be realloc()
+                        frame_info += " ";
+                        frame_info += demangled;
+                    }
                 }
             }
 

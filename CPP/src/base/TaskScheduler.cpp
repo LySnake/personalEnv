@@ -172,8 +172,10 @@ bool TaskScheduler::start()
 {
     if (runing_.exchange(true) == false && exec_thread_.joinable() == false)
     {
+        std::lock_guard<std::mutex> guard(mutex_);
         if (!timer_.open())
         {
+            runing_ = false;
             return false;
         }
         exec_thread_ = std::thread(&TaskScheduler::scheduledThread, this);
@@ -187,9 +189,13 @@ void TaskScheduler::stop()
     {
         {
             std::lock_guard<std::mutex> guard(mutex_);
-            timer_.close();
+            timer_.wakeup();
         }
         exec_thread_.join();
+        {
+            std::lock_guard<std::mutex> guard(mutex_);
+            timer_.close();
+        }
     }
 }
 

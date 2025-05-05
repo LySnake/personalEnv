@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <sys/types.h>
 
+#include <atomic>
 #include <map>
 #include <string>
 
@@ -30,7 +31,7 @@ class MonitorProc
   private:
     // 处理退出的子进程
     // child_pid:子进程pid。
-    void onExitChildProc(const pid_t child_pid);
+    void onTermChildProcess(const pid_t child_pid);
 
     // 拉起对应的子进程
     // proc_name:需要拉起的程序
@@ -43,9 +44,9 @@ class MonitorProc
     MonitorProc();
 
   private:
-    bool is_exit_; // 是否退出监听
+    std::atomic_bool is_exit_; // 是否退出监听
     //      <pid,   app_name>
-    std::map<pid_t, std::string> child_proc_; // 监控的子进程
+    std::map<pid_t, std::string> child_process_; // 监控的子进程
 };
 
 #endif // MONITOR_PROC_H

@@ -1,4 +1,4 @@
-#include <exception>
+#include <string.h>
 
 #include "App.h"
 #include "log.h"
@@ -6,6 +6,7 @@
 
 namespace
 {
+    App::SignalHandler s_core_callback_;
     // 获取:所有默认是ign行为的信号集
     sigset_t fillIgnSigs()
     {
@@ -68,8 +69,13 @@ namespace
     void core_dump(int sig)
     {
         signal(sig, SIG_DFL);
-        LOG_WARN("Signal(Core) %d received.", sig);
-        os::printBacktrace("Signal.");
+        LOG_ERROR("Signal(Core) (%d:%s) received.", sig, strsignal(sig));
+        os::printBacktrace("Signal(Core)");
+
+        if(s_core_callback_)
+        {
+            s_core_callback_(sig);
+        }
 
         raise(sig);
     }
@@ -101,21 +107,7 @@ App &App::get_instance()
 
 App::App() : sig_callbacks_{}, exit_code_{EXIT_SUCCESS}
 {
-    const auto ign_set = fillIgnSigs();
-    int ret = pthread_sigmask(SIG_BLOCK, &ign_set, nullptr);
-    if (ret != 0)
-    {
-        LOG_ERROR("System call failed. [%d].", ret);
-        ::exit(1);
-    }
-
-    const auto term_set = fillTermSigs();
-    ret = pthread_sigmask(SIG_BLOCK, &term_set, nullptr);
-    if (ret != 0)
-    {
-        LOG_ERROR("System call failed. [%d].", ret);
-        ::exit(1);
-    }
+    blockSignals();
 
     // 生成CORE文件的signal
     struct sigaction sa;
@@ -138,7 +130,44 @@ App::App() : sig_callbacks_{}, exit_code_{EXIT_SUCCESS}
     processCxxRuntimeError();
 }
 
+void App::blockSignals()
+{
+    const auto ign_set = fillIgnSigs();
+    int ret = pthread_sigmask(SIG_BLOCK, &ign_set, nullptr);
+    if (ret != 0)
+    {
+        LOG_ERROR("System call failed. [%d].", ret);
+        ::exit(1);
+    }
+
+    const auto term_set = fillTermSigs();
+    ret = pthread_sigmask(SIG_BLOCK, &term_set, nullptr);
+    if (ret != 0)
+    {
+        LOG_ERROR("System call failed. [%d].", ret);
+        ::exit(1);
+    }
+}
+
+void App::unblockSignals()
+{
+    sigset_t empty_set;
+    sigemptyset(&empty_set);
+
+    auto ret = sigprocmask(SIG_SETMASK, &empty_set, NULL);
+    if (ret != 0)
+    {
+        LOG_ERROR("System call failed. [%d].", ret);
+        ::exit(1);
+    }
+}
+
 void App::signal(const int sig, SignalHandler handler) { sig_callbacks_[sig] = std::move(handler); }
+
+void App::coreSignal(SignalHandler handler)
+{
+    s_core_callback_ = std::move(handler);
+}
 
 int App::exec()
 {
@@ -156,7 +185,7 @@ int App::exec()
         const int ret = sigwait(&mask_set, &sig);
         if (ret == 0)
         {
-            LOG_WARN("Capture the signal(%d).", sig);
+            LOG_WARN("Capture the signal(%d:%s).", sig, strsignal(sig));
             auto &cb = sig_callbacks_[sig];
 
             bool is_replace_action = false;
