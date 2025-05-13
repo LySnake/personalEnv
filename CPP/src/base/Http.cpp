@@ -40,7 +40,7 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
   if (out.write_callback) {
     ret = out.write_callback(ptr, size * nmemb);
   } else {
-    LOG_ERROR("curl function_write: No processing of received data has been "
+    SPDLOG_ERROR("curl function_write: No processing of received data has been "
               "carried out.");
   }
 
@@ -76,7 +76,7 @@ public:
   HttpGlobalHelper() {
     auto ret = curl_global_init(CURL_GLOBAL_ALL);
     if (ret != CURLE_OK) {
-      LOG_ERROR("The curl initialization failed. Reason:%s.",
+      SPDLOG_ERROR("The curl initialization failed. Reason:{}.",
                 curl_easy_strerror(ret));
       exit(EXIT_FAILURE);
     }
@@ -140,28 +140,28 @@ bool Http::Get(const std::string &url, const std::string &in, Response &out,
       if (ret == CURLE_OK) {
         result = true;
       } else {
-        LOG_WARN("The HTTP request execution failed. Reason:%s.",
+        SPDLOG_WARN("The HTTP request execution failed. Reason:{}.",
                  curl_easy_strerror(CURLcode(ret)));
       }
       long httpCode = 0;
       ret = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
       if (ret == CURLE_OK) {
         if (httpCode) {
-          LOG_INFO("HTTP Code is %ld.", httpCode);
+          SPDLOG_INFO("HTTP Code is {}.", httpCode);
         }
       } else {
-        LOG_WARN("Query failed for HTTP code.. Reason:%s.",
+        SPDLOG_WARN("Query failed for HTTP code.. Reason:{}.",
                  curl_easy_strerror(CURLcode(ret)));
       }
 
     } else {
-      LOG_WARN("Configuration of HTTP request failed. Reason:%s.",
+      SPDLOG_WARN("Configuration of HTTP request failed. Reason:{}.",
                curl_easy_strerror(CURLcode(ret)));
     }
 
     curl_easy_cleanup(curl);
   } else {
-    LOG_WARN("The initialization of the HTTP request failed.");
+    SPDLOG_WARN("The initialization of the HTTP request failed.");
   }
 
   return result;
@@ -217,29 +217,29 @@ bool Http::Post(const std::string &url, const std::string &in,
       if (ret == CURLE_OK) {
         result = true;
       } else {
-        LOG_WARN("The HTTP request execution failed. Reason:%s.",
+        SPDLOG_WARN("The HTTP request execution failed. Reason:{}.",
                  curl_easy_strerror(CURLcode(ret)));
       }
       long httpCode = 0;
       ret = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
       if (ret == CURLE_OK) {
         if (httpCode) {
-          LOG_INFO("HTTP Code is %ld.", httpCode);
+          SPDLOG_INFO("HTTP Code is {}.", httpCode);
         }
       } else {
-        LOG_WARN("Query failed for HTTP code.. Reason:%s.",
+        SPDLOG_WARN("Query failed for HTTP code.. Reason:{}.",
                  curl_easy_strerror(CURLcode(ret)));
       }
 
     } else {
-      LOG_WARN("Configuration of HTTP request failed. Reason:%s.",
+      SPDLOG_WARN("Configuration of HTTP request failed. Reason:{}.",
                curl_easy_strerror(CURLcode(ret)));
     }
 
     curl_easy_cleanup(curl);
     curl_slist_free_all(pHeaders);
   } else {
-    LOG_WARN("The initialization of the HTTP request failed.");
+    SPDLOG_WARN("The initialization of the HTTP request failed.");
   }
 
   return result;

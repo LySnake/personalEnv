@@ -20,7 +20,7 @@ bool EventFD::open(const bool has_sem_flag)
 {
     if (isVaild())
     {
-        LOG_ERROR("Repeat to create event_fd.");
+        SPDLOG_ERROR("Repeat to create event_fd.");
         return false;
     }
 
@@ -35,7 +35,7 @@ bool EventFD::open(const bool has_sem_flag)
 
     if (!isVaild())
     {
-        LOG_ERROR("create event_fd fail. %s.", os::POSIX_errno().c_str());
+        SPDLOG_ERROR("create event_fd fail. {}.", os::POSIX_errno());
         return false;
     }
 
@@ -55,14 +55,14 @@ bool EventFD::notify()
 {
     if (!isVaild())
     {
-        LOG_ERROR("The event_fd is invalid.");
+        SPDLOG_ERROR("The event_fd is invalid.");
         return false;
     }
 
     const eventfd_t eventfd_value = 1;
     if (eventfd_write(event_fd_, eventfd_value))
     {
-        LOG_ERROR("Failed to write the eventfd_value to event_fd. %s.", os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Failed to write the eventfd_value to event_fd. {}.", os::POSIX_errno());
         return false;
     }
 
@@ -73,14 +73,14 @@ bool EventFD::wait()
 {
     if (!isVaild())
     {
-        LOG_ERROR("The event_fd is invalid.");
+        SPDLOG_ERROR("The event_fd is invalid.");
         return false;
     }
 
     eventfd_t eventfd_value = 0;
     if (eventfd_read(event_fd_, &eventfd_value))
     {
-        LOG_ERROR("Failed to read the eventfd_value from event_fd. %s.", os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Failed to read the eventfd_value from event_fd. {}.", os::POSIX_errno());
         return false;
     }
 
@@ -95,14 +95,14 @@ bool TaskScheduler::Timer::open()
 {
     if (isVaild())
     {
-        LOG_ERROR("Repeat to create epoll_fd.");
+        SPDLOG_ERROR("Repeat to create epoll_fd.");
         return false;
     }
 
     epoll_fd_ = ::epoll_create1(EPOLL_CLOEXEC);
     if (epoll_fd_ == -1)
     {
-        LOG_ERROR("Failed to create epoll_fd. %s.", os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Failed to create epoll_fd. {}.", os::POSIX_errno());
         return false;
     }
 
@@ -112,7 +112,7 @@ bool TaskScheduler::Timer::open()
 
     if (!EventFD_.open() || ::epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, EventFD_.fd(), &event))
     {
-        LOG_ERROR("Failed to associated event_fd. %s.", os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Failed to associated event_fd. {}.", os::POSIX_errno());
         return false;
     }
 
@@ -136,7 +136,7 @@ bool TaskScheduler::Timer::wait(const std::chrono::milliseconds &delta_ms)
 {
     if (!isVaild())
     {
-        LOG_ERROR("The Timer is invalid.");
+        SPDLOG_ERROR("The Timer is invalid.");
         return false;
     }
 
@@ -146,7 +146,7 @@ bool TaskScheduler::Timer::wait(const std::chrono::milliseconds &delta_ms)
     {
         if (errno != EINTR)
         {
-            LOG_ERROR("Failed to invoke epoll_wait. %s.", os::POSIX_errno().c_str());
+            SPDLOG_ERROR("Failed to invoke epoll_wait. {}.", os::POSIX_errno());
             return false;
         }
 
@@ -208,7 +208,7 @@ void TaskScheduler::addAsynTask(AsynTask &&task)
         asynTasks_.emplace_back(AsynTaskPacket{std::move(task), asynTaskID});
         timer_.wakeup();
     }
-    // LOG_DEBUG("addAsynTask. Scheduler ID:%u, asynTaskID: %u.", id_, asynTaskID);
+    // SPDLOG_DEBUG("addAsynTask. Scheduler ID:{}, asynTaskID: {}.", id_, asynTaskID);
 }
 
 TaskScheduler::TimerID TaskScheduler::addTimerTask(TimerTask &&timerTask, const std::chrono::milliseconds delta_ms)
@@ -225,7 +225,7 @@ TaskScheduler::TimerID TaskScheduler::addTimerTask(TimerTask &&timerTask, const 
         timer_.wakeup();
     }
 
-    // LOG_DEBUG("addTimerTask. Scheduler ID:%u, timerID: %u.", id_, timerID);
+    // SPDLOG_DEBUG("addTimerTask. Scheduler ID:{}, timerID: {}.", id_, timerID);
     return timerID;
 }
 
@@ -276,7 +276,7 @@ TaskScheduler::TimerValueType TaskScheduler::getNextTimerTask(std::reference_wra
 
 void TaskScheduler::scheduledThread()
 {
-    LOG_INFO("function: %s, Scheduler ID:%u. enter.", __FUNCTION__, id_);
+    SPDLOG_INFO("function: {}, Scheduler ID:{}. enter.", __FUNCTION__, id_);
 
     while (runing_)
     {
@@ -298,12 +298,12 @@ void TaskScheduler::scheduledThread()
                     auto delta = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
                     if (delta > 50) // 50ms
                     {
-                        LOG_WARN("Asyntask duration: %.1fms. Scheduler ID: %u. asynTaskID: %u.", (end - start) / 1e6,
-                                 id_, asynTaskID);
+                        SPDLOG_WARN("Asyntask duration: {}ms. Scheduler ID: {}. asynTaskID: {}.", delta, id_,
+                                    asynTaskID);
                     }
                     else
                     {
-                        // LOG_DEBUG("Asyntask done. Scheduler ID:%u, asynTaskID: %u.", id_, asynTaskID);
+                        // SPDLOG_DEBUG("Asyntask done. Scheduler ID:{}, asynTaskID: {}.", id_, asynTaskID);
                     }
                 }
                 asynTaskID = 0;
@@ -311,13 +311,13 @@ void TaskScheduler::scheduledThread()
         }
         catch (const std::exception &e)
         {
-            LOG_ERROR("AsynTask. Catch CXX std::exception: %s. Scheduler ID: %u. asynTaskID: %u.", e.what(), id_,
-                      asynTaskID);
+            SPDLOG_ERROR("AsynTask. Catch CXX std::exception: {}. Scheduler ID: {}. asynTaskID: {}.", e.what(), id_,
+                         asynTaskID);
             std::abort();
         }
         catch (...)
         {
-            LOG_ERROR("AsynTask. Catch CXX unknow exception. Scheduler ID: %u. asynTaskID: %u.", id_, asynTaskID);
+            SPDLOG_ERROR("AsynTask. Catch CXX unknow exception. Scheduler ID: {}. asynTaskID: {}.", id_, asynTaskID);
             std::abort();
         }
 
@@ -369,12 +369,11 @@ void TaskScheduler::scheduledThread()
                         auto delta = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
                         if (delta > 50) // 50ms
                         {
-                            LOG_WARN("Timertask duration: %.1fms. Scheduler ID: %u.timerID: %u.", (end - start) / 1e6,
-                                     id_, timerID);
+                            SPDLOG_WARN("Timertask duration: {}ms. Scheduler ID: {}.timerID: {}.", delta, id_, timerID);
                         }
                         else
                         {
-                            // LOG_DEBUG("Timertask done. Scheduler ID:%u, timerID: %u.", id_, timerID);
+                            SPDLOG_DEBUG("Timertask done. Scheduler ID:{}, timerID: {}.", id_, timerID);
                         }
                     }
                     else
@@ -387,13 +386,13 @@ void TaskScheduler::scheduledThread()
         }
         catch (const std::exception &e)
         {
-            LOG_ERROR("TimerTask. Catch CXX std::exception: %s. Scheduler ID: %u. timerID: %u.", e.what(), id_,
-                      timerID);
+            SPDLOG_ERROR("TimerTask. Catch CXX std::exception: {}. Scheduler ID: {}. timerID: {}.", e.what(), id_,
+                         timerID);
             std::abort();
         }
         catch (...)
         {
-            LOG_ERROR("TimerTask. Catch CXX unknow exception. Scheduler ID: %u. timerID: %u.", id_, timerID);
+            SPDLOG_ERROR("TimerTask. Catch CXX unknow exception. Scheduler ID: {}. timerID: {}.", id_, timerID);
             std::abort();
         }
 
@@ -401,12 +400,12 @@ void TaskScheduler::scheduledThread()
         {
             if (!timer_.wait(needSleepTime_ms))
             {
-                LOG_ERROR("function: %s. An unexpected failure. ", __FUNCTION__);
+                SPDLOG_ERROR("function: {}. An unexpected failure. ", __FUNCTION__);
             }
         }
     }
 
-    LOG_INFO("function: %s, Scheduler ID: %u. out.", __FUNCTION__, id_);
+    SPDLOG_INFO("function: {}, Scheduler ID: {}. out.", __FUNCTION__, id_);
 }
 
 TaskScheduler::TimePoint TaskScheduler::nextTimePoint(const std::chrono::milliseconds delta_ms)

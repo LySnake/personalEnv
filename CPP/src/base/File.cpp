@@ -34,7 +34,7 @@ bool File::isExist(const std::string &file_name)
     auto ret = ::stat(file_name.c_str(), &statbuf);
     if (-1 == ret)
     {
-        LOG_WARN("filename is %s. %s", file_name.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_WARN("filename is {}. {}", file_name, os::POSIX_errno());
         return false;
     }
 
@@ -45,14 +45,13 @@ bool File::open(const bool enable_read, const bool enable_write)
 {
     if (!enable_read && !enable_write)
     {
-        LOG_ERROR("filename is %s.Invalid parameter. enable_read is false and enable_write is false.",
-                  file_name_.c_str());
+        SPDLOG_ERROR("filename is {}.Invalid parameter. enable_read is false and enable_write is false.", file_name_);
         return false;
     }
 
     if (fd_ != -1)
     {
-        LOG_ERROR("File has been opened. filename is %s.", file_name_.c_str());
+        SPDLOG_ERROR("File has been opened. filename is {}.", file_name_);
         return false;
     }
 
@@ -85,7 +84,7 @@ bool File::open(const bool enable_read, const bool enable_write)
     fd_ = ::open(file_name_.c_str(), flags, mode);
     if (fd_ == -1)
     {
-        LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         return false;
     }
 
@@ -93,13 +92,13 @@ bool File::open(const bool enable_read, const bool enable_write)
     auto ret = ::fstat(fd_, &statbuf);
     if (-1 == ret)
     {
-        LOG_ERROR("fd is %d. filename is %s. %s", fd_, file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("fd is {}. filename is {}. {}", fd_, file_name_, os::POSIX_errno());
         return false;
     }
     auto file_type = statbuf.st_mode & S_IFMT;
     if (file_type != S_IFREG) //是否是普通文件
     {
-        LOG_ERROR("file_type: %d. filename is %s. ", (int)file_type, file_name_.c_str());
+        SPDLOG_ERROR("file_type: {}. filename is {}. ", (int)file_type, file_name_);
         return false;
     }
 
@@ -113,7 +112,7 @@ void File::close()
         auto ret = ::close(fd_);
         if (-1 == ret)
         {
-            LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+            SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         }
         fd_ = -1;
         file_name_.clear();
@@ -124,7 +123,7 @@ bool File::write(const void *buff, const size_t len)
 {
     if (len > SSIZE_MAX)
     {
-        LOG_ERROR("len:%llu.len is greater than SSIZE_MAX. filename is %s. ", len, file_name_.c_str());
+        SPDLOG_ERROR("len:{}.len is greater than SSIZE_MAX({}). filename is {}. ", len, SSIZE_MAX, file_name_);
         return false;
     }
 
@@ -136,7 +135,7 @@ bool File::write(const void *buff, const size_t len)
         {
             if (errno != EINTR)
             {
-                LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+                SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
                 return false;
             }
         }
@@ -158,7 +157,7 @@ bool File::append(const void *buff, const size_t len)
 {
     if (len > SSIZE_MAX)
     {
-        LOG_ERROR("len:%llu.len is greater than SSIZE_MAX. filename is %s. ", len, file_name_.c_str());
+        SPDLOG_ERROR("len:{}.len is greater than SSIZE_MAX. filename is {}. ", len, file_name_);
         return false;
     }
 
@@ -169,7 +168,7 @@ bool File::read(uint8_t *buff, const size_t max_len, size_t &len)
 {
     if (max_len > SSIZE_MAX)
     {
-        LOG_ERROR("len:%llu.len is greater than SSIZE_MAX. filename is %s. ", len, file_name_.c_str());
+        SPDLOG_ERROR("len:{}.len is greater than SSIZE_MAX. filename is {}. ", len, file_name_);
         return false;
     }
 
@@ -181,7 +180,7 @@ bool File::read(uint8_t *buff, const size_t max_len, size_t &len)
         {
             if (errno != EINTR)
             {
-                LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+                SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
                 return false;
             }
         }
@@ -253,7 +252,7 @@ bool File::truncate(const size_t size)
         {
             if (errno != EINTR)
             {
-                LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+                SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
                 return false;
             }
             continue;
@@ -268,7 +267,7 @@ bool File::size(size_t &size)
     auto ret = ::lseek(fd_, 0, SEEK_END);
     if (ret == -1)
     {
-        LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         return false;
     }
 
@@ -281,7 +280,7 @@ bool File::getPos(size_t &pos)
     auto ret = ::lseek(fd_, 0, SEEK_CUR);
     if (ret == -1)
     {
-        LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         return false;
     }
 
@@ -294,7 +293,7 @@ bool File::setPos(const size_t pos)
     auto ret = ::lseek(fd_, (off_t)pos, SEEK_SET);
     if (ret == -1)
     {
-        LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         return false;
     }
 
@@ -306,7 +305,7 @@ bool File::move(const long offset)
     auto ret = ::lseek(fd_, (off_t)offset, SEEK_CUR);
     if (ret == -1)
     {
-        LOG_ERROR("filename is %s. %s", file_name_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("filename is {}. {}", file_name_, os::POSIX_errno());
         return false;
     }
 

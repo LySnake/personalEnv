@@ -15,7 +15,7 @@ void EventLoop::start()
     {
         if (!scheduler.start())
         {
-            LOG_ERROR("Failed to start EventLoop.");
+            SPDLOG_ERROR("Failed to start EventLoop.");
             exit(1);
         }
     }
@@ -33,7 +33,7 @@ TaskScheduler &EventLoop::get(const uint8_t id)
 {
     if (id >= taskSchedulers_.size())
     {
-        LOG_ERROR("out of rang. id:%d.", id);
+        SPDLOG_ERROR("out of rang. id:{}.", id);
         exit(1);
     }
 

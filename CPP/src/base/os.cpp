@@ -8,7 +8,6 @@
 
 #include "log.h"
 #include "os.h"
-#include "File.h"
 
 namespace os
 {
@@ -18,7 +17,7 @@ namespace os
         std::array<char, 1024> buffer;
         std::string result;
 
-        LOG_INFO("Exec shell cmd: %s.", shell_cmd.c_str());
+        SPDLOG_INFO("Exec shell cmd: {}.", shell_cmd);
 
         // 使用 popen 执行命令并将 stderr 重定向到 stdout
         FILE *pipe = popen((shell_cmd + " 2>&1").c_str(), "r");
@@ -66,7 +65,7 @@ namespace os
         {
             frame_info = strings[i];
 
-            // LOG_INFO("frame_info: %s.", frame_info.c_str());
+            SPDLOG_INFO("frame_info: {}.", frame_info);
             auto symbol_start = frame_info.find("(");
 
             if (symbol_start != std::string::npos)
@@ -90,11 +89,11 @@ namespace os
 
             if (frame_info.empty())
             {
-                LOG_INFO("%s:[%d] %p.", tag.c_str(), i, result[i]);
+                SPDLOG_INFO("{}:[{}] {}.", tag, i, result[i]);
             }
             else
             {
-                LOG_INFO("%s:[%d] %s.", tag.c_str(), i, frame_info.c_str());
+                SPDLOG_INFO("{}:[{}] {}.", tag, i, frame_info);
             }
         }
         free(demangled);
@@ -111,15 +110,5 @@ namespace os
     {
         auto pos = path.find_last_of("/");
         return pos != std::string::npos ? path.substr(pos + 1) : std::string{};
-    }
-
-    std::string getCommName()
-    {
-        std::string comm_name = "unknow";
-        File comm_file("/proc/self/comm");
-        comm_file.open(true, false);
-
-        comm_file.readAll(comm_name);
-        return comm_name;
     }
 } // namespace os

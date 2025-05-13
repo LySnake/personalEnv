@@ -1,28 +1,20 @@
 #ifndef LOG_H
 #define LOG_H
 
-#include <cstdarg>
-#include <ctime>
-#include <fstream>
-#include <iostream>
-#include <string>
+#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_TRACE
+#include <spdlog/spdlog.h>
 
-// 定义日志等级
-enum LogLevel
-{
-    LOG_LEVEL_DEBUG,
-    LOG_LEVEL_INFO,
-    LOG_LEVEL_WARN,
-    LOG_LEVEL_ERROR
-};
+#include "Define.h"
 
-// 当前日志等级，可根据需要修改
+void init_spdlog(const std::string name,const bool to_stdout = true);
 
-void logMessage(LogLevel level, const char *file, int line, const char *format, ...);
-// 定义日志宏
-#define LOG_DEBUG(format, ...) logMessage(LOG_LEVEL_DEBUG, __FILE__, __LINE__, format, ##__VA_ARGS__)
-#define LOG_INFO(format, ...) logMessage(LOG_LEVEL_INFO, __FILE__, __LINE__, format, ##__VA_ARGS__)
-#define LOG_WARN(format, ...) logMessage(LOG_LEVEL_WARN, __FILE__, __LINE__, format, ##__VA_ARGS__)
-#define LOG_ERROR(format, ...) logMessage(LOG_LEVEL_ERROR, __FILE__, __LINE__, format, ##__VA_ARGS__)
+void deinit_spdlog();
 
+// SPDLOG_ACTIVE_LEVEL <= SPDLOG_LEVEL_DEBUG 成立时，存在SPDLOG_TRACE
+// SPDLOG_TRACE
+// SPDLOG_DEBUG
+// SPDLOG_INFO
+// SPDLOG_WARN
+// SPDLOG_ERROR
+// SPDLOG_CRITICAL
 #endif // LOG_H

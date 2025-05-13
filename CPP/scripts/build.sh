@@ -15,4 +15,4 @@ cd ../build
 # cmake -DTOOLCHAIN=${TOOLCHAIN} -j8 ..
 cmake ..
 
-make -j4
+make -j8

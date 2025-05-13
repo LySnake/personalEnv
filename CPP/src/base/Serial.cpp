@@ -37,12 +37,12 @@ bool Serial::open(const int oflag, const speed_t speed, const unsigned char cc_V
         return false;
     }
 
-    LOG_INFO("open device [%s].", device_.c_str());
+    SPDLOG_INFO("open device [{}].", device_);
     struct termios Opt;
     fd_ = ::open(device_.c_str(), oflag);
     if (fd_ == INVALID_FD)
     {
-        LOG_ERROR("Open fail.Device is %s.", device_.c_str());
+        SPDLOG_ERROR("Open fail.Device is {}.", device_);
         return false;
     }
     tcgetattr(fd_, &Opt);
@@ -64,14 +64,14 @@ bool Serial::open(const int oflag, const speed_t speed, const unsigned char cc_V
     /* 清空缓冲区 */
     if (0 > tcflush(fd_, TCIOFLUSH))
     {
-        LOG_ERROR("Device is %s.tcflush error: %s.", device_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Device is {}.tcflush error: {}.", device_, os::POSIX_errno());
         close();
         return false;
     }
 
     if (tcsetattr(fd_, TCSANOW, &Opt) != 0)
     {
-        LOG_ERROR("Device is %s.Set uart setting failed!errno:%s.", device_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("Device is {}.Set uart setting failed!errno:{}.", device_, os::POSIX_errno());
         close();
         return false;
     }
@@ -92,13 +92,13 @@ bool Serial::read(void *buff, const size_t buff_size, size_t &read_len)
 {
     if (fd_ == INVALID_FD)
     {
-        LOG_ERROR("Invalid fd.Device is %s.", device_.c_str());
+        SPDLOG_ERROR("Invalid fd.Device is {}.", device_);
         return false;
     }
 
     if (buff_size > SSIZE_MAX)
     {
-        LOG_ERROR("buff_size:%llu.len is greater than SSIZE_MAX. device is %s. ", buff_size, device_.c_str());
+        SPDLOG_ERROR("buff_size:{}.len is greater than SSIZE_MAX. device is {}. ", buff_size, device_);
         return false;
     }
 
@@ -121,7 +121,7 @@ bool Serial::read(void *buff, const size_t buff_size, size_t &read_len)
                 break;
             }
 
-            LOG_ERROR("read error. device is %s.errno:%s.", device_.c_str(), os::POSIX_errno().c_str());
+            SPDLOG_ERROR("read error. device is {}.errno:{}.", device_, os::POSIX_errno());
             break;
         }
         else
@@ -140,13 +140,13 @@ bool Serial::write(const void *data, const size_t data_len, size_t &written)
 {
     if (fd_ == INVALID_FD)
     {
-        LOG_ERROR("Invalid fd.Device is %s.", device_.c_str());
+        SPDLOG_ERROR("Invalid fd.Device is {}.", device_);
         return false;
     }
 
     if (data_len > SSIZE_MAX)
     {
-        LOG_ERROR("data_len:%llu.len is greater than SSIZE_MAX. device is %s. ", data_len, device_.c_str());
+        SPDLOG_ERROR("data_len:{}.len is greater than SSIZE_MAX. device is {}. ", data_len, device_);
         return false;
     }
 
@@ -167,7 +167,7 @@ bool Serial::write(const void *data, const size_t data_len, size_t &written)
                 break;
             }
 
-            LOG_ERROR("write error. device is %s.errno:%s.", device_.c_str(), os::POSIX_errno().c_str());
+            SPDLOG_ERROR("write error. device is {}.errno:{}.", device_, os::POSIX_errno());
             break;
         }
         else
@@ -191,14 +191,14 @@ bool Serial::flush(const int action)
     bool result = false;
     if (fd_ == INVALID_FD)
     {
-        LOG_ERROR("Invalid fd.Device is %s.", device_.c_str());
+        SPDLOG_ERROR("Invalid fd.Device is {}.", device_);
         return result;
     }
 
     auto ret = tcflush(fd_, action);
     if (ret == -1)
     {
-        LOG_ERROR("write error. device is %s.errno:%s.", device_.c_str(), os::POSIX_errno().c_str());
+        SPDLOG_ERROR("write error. device is {}.errno:{}.", device_, os::POSIX_errno());
     }
     else
     {

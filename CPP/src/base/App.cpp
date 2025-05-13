@@ -6,7 +6,7 @@
 
 namespace
 {
-    App::SignalHandler s_core_callback_;
+    App::SignalHandler s_core_signal_handler;
     // 获取:所有默认是ign行为的信号集
     sigset_t fillIgnSigs()
     {
@@ -69,33 +69,15 @@ namespace
     void core_dump(int sig)
     {
         signal(sig, SIG_DFL);
-        LOG_ERROR("Signal(Core) (%d:%s) received.", sig, strsignal(sig));
-        os::printBacktrace("Signal(Core)");
+        SPDLOG_ERROR("Signal(Core) ({}:{}) received.", sig, strsignal(sig));
+        os::printBacktrace("Signal(Core).");
 
-        if(s_core_callback_)
+        if (s_core_signal_handler)
         {
-            s_core_callback_(sig);
+            s_core_signal_handler(sig);
         }
 
         raise(sig);
-    }
-
-    void cxx_unexpected_handler()
-    {
-        LOG_ERROR("throws an exception of the type not listed in its exception specification.");
-        std::terminate();
-    }
-
-    void cxx_terminate_handler()
-    {
-        LOG_ERROR("The CPP program terminates.");
-        std::abort();
-    }
-
-    void processCxxRuntimeError()
-    {
-        std::set_unexpected(cxx_unexpected_handler);
-        std::set_terminate(cxx_terminate_handler);
     }
 } // namespace
 
@@ -107,8 +89,6 @@ App &App::get_instance()
 
 App::App() : sig_callbacks_{}, exit_code_{EXIT_SUCCESS}
 {
-    blockSignals();
-
     // 生成CORE文件的signal
     struct sigaction sa;
     sa.sa_handler = core_dump;
@@ -125,18 +105,51 @@ App::App() : sig_callbacks_{}, exit_code_{EXIT_SUCCESS}
     sigaction(SIGSYS, &sa, nullptr);
     sigaction(SIGXCPU, &sa, nullptr);
     sigaction(SIGXFSZ, &sa, nullptr);
-
-    
-    processCxxRuntimeError();
 }
 
-void App::blockSignals()
+void App::addSignalSet(std::initializer_list<int> &sig_list)
+{
+    sigset_t add_set;
+    sigemptyset(&add_set);
+
+    for (const auto sig : sig_list)
+    {
+        sigaddset(&add_set, sig);
+    }
+
+    int ret = pthread_sigmask(SIG_BLOCK, &add_set, nullptr);
+    if (ret != 0)
+    {
+        SPDLOG_ERROR("System call failed. [{}].", ret);
+        ::exit(1);
+    }
+}
+
+void App::delSignalSet(std::initializer_list<int> &sig_list)
+{
+    sigset_t del_set;
+    sigemptyset(&del_set);
+
+    for (const auto sig : sig_list)
+    {
+        sigaddset(&del_set, sig);
+    }
+
+    int ret = pthread_sigmask(SIG_UNBLOCK, &del_set, nullptr);
+    if (ret != 0)
+    {
+        SPDLOG_ERROR("System call failed. [{}].", ret);
+        ::exit(1);
+    }
+}
+
+void App::setDefSignalSet()
 {
     const auto ign_set = fillIgnSigs();
     int ret = pthread_sigmask(SIG_BLOCK, &ign_set, nullptr);
     if (ret != 0)
     {
-        LOG_ERROR("System call failed. [%d].", ret);
+        SPDLOG_ERROR("System call failed. [{}].", ret);
         ::exit(1);
     }
 
@@ -144,12 +157,12 @@ void App::blockSignals()
     ret = pthread_sigmask(SIG_BLOCK, &term_set, nullptr);
     if (ret != 0)
     {
-        LOG_ERROR("System call failed. [%d].", ret);
+        SPDLOG_ERROR("System call failed. [{}].", ret);
         ::exit(1);
     }
 }
 
-void App::unblockSignals()
+void App::emptySignalSet()
 {
     sigset_t empty_set;
     sigemptyset(&empty_set);
@@ -157,17 +170,14 @@ void App::unblockSignals()
     auto ret = sigprocmask(SIG_SETMASK, &empty_set, NULL);
     if (ret != 0)
     {
-        LOG_ERROR("System call failed. [%d].", ret);
+        SPDLOG_ERROR("System call failed. [{}].", ret);
         ::exit(1);
     }
 }
 
 void App::signal(const int sig, SignalHandler handler) { sig_callbacks_[sig] = std::move(handler); }
 
-void App::coreSignal(SignalHandler handler)
-{
-    s_core_callback_ = std::move(handler);
-}
+void App::coreSignal(SignalHandler handler) { s_core_signal_handler = std::move(handler); }
 
 int App::exec()
 {
@@ -175,7 +185,7 @@ int App::exec()
     int ret = pthread_sigmask(SIG_SETMASK, nullptr, &mask_set);
     if (ret != 0)
     {
-        LOG_ERROR("System call failed. [%d].", ret);
+        SPDLOG_ERROR("System call failed. [{}].", ret);
         ::exit(1);
     }
 
@@ -185,7 +195,7 @@ int App::exec()
         const int ret = sigwait(&mask_set, &sig);
         if (ret == 0)
         {
-            LOG_WARN("Capture the signal(%d:%s).", sig, strsignal(sig));
+            SPDLOG_WARN("Capture the signal({}:{}).", sig, strsignal(sig));
             auto &cb = sig_callbacks_[sig];
 
             bool is_replace_action = false;
@@ -202,7 +212,7 @@ int App::exec()
         }
         else
         {
-            LOG_ERROR("System call failed. [%d].", ret);
+            SPDLOG_ERROR("System call failed. [{}].", ret);
             break;
         }
     }
@@ -216,7 +226,7 @@ void App::exit(const int exit_code)
     int ret = raise(KILL_SELF_PROC_SIGNAL);
     if (ret != 0)
     {
-        LOG_ERROR("System call failed. [%d].", ret);
+        SPDLOG_ERROR("System call failed. [{}].", ret);
         ::exit(1);
     }
 }

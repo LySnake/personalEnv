@@ -22,7 +22,7 @@ class MonitorProc
     DISALLOW_COPY_AND_MOVE_OPERATOR(MonitorProc);
 
     // 监听 SIGCHLD 信号的处理函数
-    static bool onChildStatusChange(const int sig);
+    bool onChildStatusChange(const int sig);
 
     // 版本一致性检查时，
     void start();

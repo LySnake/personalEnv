@@ -88,3 +88,4 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${PROJECT_SOURCE_DIR}/lib")
 add_compile_options(-Wall -Werror -g)
 
 add_subdirectory(src)
+add_subdirectory(tools)
