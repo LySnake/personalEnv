@@ -28,7 +28,7 @@ class Delay
 
 // 辅助宏
 // 定义默认变量名(带行号)
-#define DELAY_HELPER(invoke_func_) const auto MACRO_TO_SYMBOL(delay_, __LINE__) = Delay(invoke_func_);
+#define DELAY_HELPER(invoke_func_) const auto UNIQUE_IDENTIFIER(delay_) = Delay(invoke_func_);
 
 // DELAY_HELPER([]() {});
 

@@ -5,12 +5,15 @@
 
 #define UNUSED(var_) (void)var_
 
-// 宏:arg_转字符串
-#define __MACRO_TO_STR(arg_) #arg_
-// 宏:arg_0与arg_1拼接形成新的符号(arg_0与arg_1不可以是宏)
-#define MACRO_CONCAT(arg_0, arg_1) arg_0##arg_1
-// 宏:arg_0与arg_1拼接形成新的符号(arg_0与arg_1可以是宏)
-#define MACRO_TO_SYMBOL(arg_0, arg_1) MACRO_CONCAT(arg_0, arg_1)
+// 宏:转字符串
+#define MAKE_STR(arg_) #arg_
+
+// 宏:label_与L拼接形成新的符号(label_与L不可以是宏)
+#define MAKE_LABEL2(label_, L) label_##L
+// 宏:label_与L拼接形成新的符号(label_与L可以是宏)
+#define MAKE_LABEL1(label_, L)  MAKE_LABEL2(label_, L)
+// 宏:生成唯一标识符
+#define UNIQUE_IDENTIFIER(label_) MAKE_LABEL1(label_, __LINE__)
 
 // C++17: 替换方案  https://zh.cppreference.com/w/cpp/iterator/size
 // //计算arrar数据的长度
