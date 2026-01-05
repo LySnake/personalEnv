@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# 依赖:
+# openssl、jq: linux上的命令,需要自己安装            
+# meta_tool、encrypt_tool:内部仓库tools构建的小命令，如果没有，找版本发布人员。  --(与本脚本，在同一个目录下)
+# private.pem:加解密中使用到的私钥                                             --(与本脚本，在同一个目录下)
+
+
+set -e
+# set -x
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+if [ -z "$1" ]; then
+    echo "错误：请提供需要解密的文件."
+    exit 1
+else
+    echo "解密文件: $1"
+fi
+
+ENCRYPT_FILE=$1
+# 移除 .sign 后缀（若存在）
+PLAINT_FILE="${ENCRYPT_FILE%.upm}"
+
+TEM_FILE=${ENCRYPT_FILE}.temp
+
+# 若未移除成功（即原无后缀），则添加 .unsign
+if [ "$PLAINT_FILE" = "$ENCRYPT_FILE" ]; then
+    PLAINT_FILE="${ENCRYPT_FILE}.unsign"
+else
+    PLAINT_FILE="${PLAINT_FILE}.tar.gz"
+fi
+
+
+meta_json=$(${SCRIPT_DIR}/meta_tool ${ENCRYPT_FILE} --output ${TEM_FILE})
+SIGN=$(echo "$meta_json" | jq -r '.sign')
+
+${SCRIPT_DIR}/encrypt_tool -d ${TEM_FILE} --output ${PLAINT_FILE} --key ${SIGN} --pem ${SCRIPT_DIR}/public.pem
+rm ${TEM_FILE}

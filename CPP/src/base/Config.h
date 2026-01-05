@@ -13,7 +13,7 @@
 #define ALIEN_CELL_CONFIG_RW_DIR ALIEN_CELL_RW_DIR "config/"
 
 // 日志文件存放目录
-#define ALIEN_CELL_LOG_RW_DIR PLATFORM_RW_DIR "log/aliend/"
+#define ALIEN_CELL_LOG_RW_DIR PLATFORM_RW_DIR "log/"
 
 // AlienCell APP分区目录
 #define ALIEN_CELL_APP_DIR "/mnt/app/"

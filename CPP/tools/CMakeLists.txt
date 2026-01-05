@@ -1,1 +1,2 @@
 add_subdirectory(meta_tool)
+add_subdirectory(encrypt_tool)

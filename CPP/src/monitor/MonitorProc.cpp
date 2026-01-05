@@ -11,29 +11,39 @@
 #include "App.h"
 #include "Config.h"
 #include "EventLoop.h"
+#include "File.h"
 #include "MonitorProc.h"
 #include "log.h"
+#include "nlohmann/json.hpp"
 #include "os.h"
 
+#define JSON_CONFIG_FILE ALIEN_CELL_CONFIG_DIR "/config.json"
+
+#define JSON_KEY_APPS "apps"
+#define JSON_KEY_APP_NAME "app_name"
+#define JSON_KEY_ARGS "args"
+#define JSON_KEY_DEPENDENT_APPS "restart_dependent_apps"
+#define JSON_KEY_POST_FORK_SLEEP "post_fork_sleep_s"
+#define JSON_KEY_PROC_CORE_NUMS "proc_core_nums"
 
 using namespace std::chrono_literals;
 
 namespace
 {
-    using SteadyTimePoint = std::chrono::steady_clock::time_point; // 单调时钟使用的time_point类型
-
-    // 启动程序的配置信息
-    struct AppConf
+    // 把进程pid绑定到具体的CPU核心上
+    //            [核心编号范围]  [pid]
+    // taskset -pc 2-3 475
+    void bind_cpu_core(const pid_t pid, const std::string core_nums)
     {
-        const std::string app_name;          // 程序名(可运行的名字，必要时带路径)
-        const std::vector<std::string> args; // 程序启动时的启动参数
-        const std::vector<std::string> restart_dependent_apps; // 需要重启的关联程序(包括自己，有启动先后顺序 左->右)
-        uint32_t restart_total_count;                          // 进程总重启次数
-        SteadyTimePoint start_time_point;                      // 进程启动时间
-    };
-
-    std::array<AppConf, 1> apps{}; 
-};     // namespace
+        const std::string shell_cmd_bind_cpu = "taskset -pc " + core_nums + " " + std::to_string(pid);
+        auto result = os::exec_shell(shell_cmd_bind_cpu);
+        if (!result.first)
+        {
+            SPDLOG_ERROR("Failed to bind the process to the CPU core. pid is {}. stderr/stdout is {}.", pid,
+                         result.second);
+        }
+    }
+} // namespace
 
 MonitorProc &MonitorProc::get_instance()
 {
@@ -41,7 +51,94 @@ MonitorProc &MonitorProc::get_instance()
     return ins;
 }
 
-MonitorProc::MonitorProc() : is_exit_{true} {}
+MonitorProc::MonitorProc() : is_exit_{true} { init(); }
+
+void MonitorProc::init()
+{
+    {
+        const pid_t current_pid = getpid();
+        bind_cpu_core(current_pid, "0-1");
+    }
+
+    File config_file(JSON_CONFIG_FILE);
+    std::string file_content;
+    if (config_file.open(true, false) && config_file.readAll(file_content))
+    {
+        SPDLOG_INFO("File: {}, content :{}", JSON_CONFIG_FILE, file_content);
+        try
+        {
+            const nlohmann::json config = nlohmann::json::parse(file_content);
+            if (config[JSON_KEY_APPS].is_array())
+            {
+                auto apps = config[JSON_KEY_APPS];
+                for (const auto &item : apps)
+                {
+                    if (item[JSON_KEY_APP_NAME].is_string() && item[JSON_KEY_ARGS].is_array() &&
+                        item[JSON_KEY_DEPENDENT_APPS].is_array())
+                    {
+                        auto app_name = item[JSON_KEY_APP_NAME].get<std::string>();
+                        const auto json_args = item[JSON_KEY_ARGS];
+                        const auto json_restart_dependent_apps = item[JSON_KEY_DEPENDENT_APPS];
+                        const float post_fork_sleep_s = item.value(JSON_KEY_POST_FORK_SLEEP, 0.0f);
+                        auto core_nums = item[JSON_KEY_PROC_CORE_NUMS].get<std::string>();
+
+                        std::vector<std::string> args;
+                        std::vector<std::string> restart_dependent_apps;
+
+                        for (const auto &arg : json_args)
+                        {
+                            if (arg.is_string())
+                            {
+                                args.emplace_back(arg.get<std::string>());
+                            }
+                            else
+                            {
+                                SPDLOG_ERROR(
+                                  "Failed to parse JSON. Error: {} field has an incorrect type. app_name is {}.",
+                                  JSON_KEY_ARGS, app_name);
+                            }
+                        }
+
+                        for (const auto &app : json_restart_dependent_apps)
+                        {
+                            if (app.is_string())
+                            {
+                                restart_dependent_apps.emplace_back(app.get<std::string>());
+                            }
+                            else
+                            {
+                                SPDLOG_ERROR(
+                                  "Failed to parse JSON. Error: {} field has an incorrect type. app_name is {}.",
+                                  JSON_KEY_DEPENDENT_APPS, app_name);
+                            }
+                        }
+
+                        apps_.emplace_back(AppConf{std::move(app_name), std::move(core_nums), std::move(args),
+                                                   std::move(restart_dependent_apps), post_fork_sleep_s});
+                    }
+                    else
+                    {
+                        SPDLOG_ERROR("Failed to parse the JSON. Field type error.");
+                    }
+                }
+            }
+            else
+            {
+                SPDLOG_ERROR("key({}) is not array. ", JSON_KEY_APPS);
+            }
+        }
+        catch (const std::exception &e)
+        {
+            SPDLOG_ERROR("Exception occurred while parsing the JSON file. file is {}.  exception msg is {}.",
+                         JSON_CONFIG_FILE, e.what());
+        }
+    }
+    else
+    {
+        SPDLOG_ERROR(
+          "Failed to operate the configuration file. Please check the configuration file({" JSON_CONFIG_FILE "}).");
+    }
+}
 
 bool MonitorProc::onChildStatusChange(const int sig)
 {
@@ -107,10 +204,11 @@ bool MonitorProc::onChildStatusChange(const int sig)
 
     return true;
 }
+
 void MonitorProc::start()
 {
     is_exit_ = false;
-    for (auto &app : apps)
+    for (const auto &app : apps_)
     {
         launchProc(app.app_name);
     }
@@ -144,9 +242,31 @@ void MonitorProc::onTermChildProcess(const pid_t child_pid)
         const std::string term_app_name = std::move(iter->second);
         child_process_.erase(iter);
         SPDLOG_WARN("Terminated child process, pid:{}, name:{}.", child_pid, term_app_name);
+
+        { // 进程终止时，收集dmesg
+            for (auto &app : apps_)
+            {
+                if (app.app_name == term_app_name)
+                {
+                    std::string shell_cmd_dmesg = "dmesg > " ALIEN_CELL_LOG_RW_DIR;
+                    if (app.args.empty())
+                    {
+                        shell_cmd_dmesg += "Term";
+                    }
+                    else
+                    {
+                        shell_cmd_dmesg += app.args[0];
+                    }
+                    shell_cmd_dmesg += "_dmesg.log";
+
+                    os::exec_shell(shell_cmd_dmesg);
+                }
+            }
+        }
+
         if (!is_exit_)
         {
-            for (auto &app : apps)
+            for (auto &app : apps_)
             {
                 if (app.app_name == term_app_name)
                 {
@@ -167,7 +287,7 @@ void MonitorProc::onTermChildProcess(const pid_t child_pid)
 
 void MonitorProc::launchProc(const std::string &app_name)
 {
-    for (auto &app : apps)
+    for (auto &app : apps_)
     {
         if (app.app_name == app_name)
         {
@@ -208,6 +328,7 @@ void MonitorProc::launchProc(const std::string &app_name)
             {
                 // 父进程
                 child_process_.insert({pid, app_name});
+                bind_cpu_core(pid, app.core_nums);
                 app.restart_total_count++;
                 const auto now = std::chrono::steady_clock().now();
 
@@ -224,6 +345,12 @@ void MonitorProc::launchProc(const std::string &app_name)
                 }
 
                 app.start_time_point = now;
+
+                if (app.post_fork_sleep_s > 0.01)
+                {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(
+                      static_cast<std::chrono::milliseconds::rep>(app.post_fork_sleep_s * 1000)));
+                }
             }
 
             break;
@@ -246,6 +373,15 @@ void MonitorProc::termProc(const std::string &app_name)
             {
                 SPDLOG_ERROR("System call failed. [{}]. {}.", ret, os::POSIX_errno());
             }
+
+            // 晚点回收
+            g_MasterScheduler.addTimerTask(
+              [pid]() {
+                  int wstatus = 0;
+                  waitpid(pid, &wstatus, WNOHANG | WUNTRACED | WCONTINUED);
+                  return false;
+              },
+              3s);
             break;
         }
     }

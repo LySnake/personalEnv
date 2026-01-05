@@ -17,7 +17,7 @@ link_directories(${PROJECT_SOURCE_DIR}/third_party/lib)
 add_executable(zhengze ${CPP_MAIN})
 target_link_libraries(zhengze PUBLIC 
     pthread 
-    base
     monitor_manager
+    base
     spdlog
 )

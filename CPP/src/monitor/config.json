@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "app_name":"/usr/bin/python",
+            "args": ["printer.py","/mnt/app/bin/printer/printer.py", "-a", "/tmp/printer.sock", "/mnt/app/config/printer_controller/printer_work.cfg","--logfile", "/data/printer_controller/printer.log"],
+            "restart_dependent_apps":[],
+            "post_fork_sleep_s": 0,
+            "proc_core_nums":"2-3"
+        }
+    ]
+}
