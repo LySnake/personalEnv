@@ -83,6 +83,8 @@
 
 [Format on Save](https://marketplace.visualstudio.com/items?itemName=WinstonFeng.FormatonSave):用于当保存文件时，对文件做相应处理，比如:修改所有文件为UTF-8带签名，table转成space等，也支持批量处理。
 
+[Force UTF-8 (without BOM)](https://marketplace.visualstudio.com/items?itemName=qazwsxlty.forceutf8nobom2022):强制把当前已有的*.h、*.cpp文件，重新保存下，变更为 UTF-8编码，且不带BOM版本，避免编译warnning以及跨unix开发的编码问题。
+
 [VS 跨平台开发](https://blog.csdn.net/u010472607/article/details/86484818):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说是半残废状态，估计是支持的完整度不高。
 
 [clion 跨平台开发](clion):通过GUN GDB的C/S结构，编译、运行在远端Linux，断点等调试在Windows.据说比VS的远程调用gdb更强大。
