@@ -1,9 +1,9 @@
 ---
 ## 目录 ##
- * [chrome](#chrome)
- * [windows](#windows)
- * [linux](#linux)
- * [其它](#其它)
+* [chrome](#chrome)
+* [windows](#windows)
+* [linux](#linux)
+* [其它](#其它)
 ---
 ## 软件配置
 
@@ -28,6 +28,8 @@
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo):很强大的插件，允许运行JS充当功能，相关JS文件可以去[Greasy Fork](https://greasyfork.org/zh-CN)下载，比如一些特殊网站的JS，让zhihu更加清爽。
 
 [google翻译](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb):翻译网页或选中字词或短语时翻译。
+
+[沉浸式翻译 - AI 双语网页翻译 | PDF翻译 | 视频翻译 | 漫画翻译](https://chromewebstore.google.com/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91-ai-%E5%8F%8C%E8%AF%AD%E7%BD%91%E9%A1%B5%E7%BF%BB%E8%AF%91-pdf%E7%BF%BB%E8%AF%91-%E8%A7%86%E9%A2%91%E7%BF%BB/bpoadfkcbjbfhfodiogcnhhhpibjhbnh?hl=zh-CN&utm_source=ext_sidebar):google翻译可能需要翻墙，但它能直接翻译整个网页还不需要翻墙。
 
 [Send to Kindle](https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan):一键发送网页文章到Kindle阅读器。
 
@@ -136,6 +138,8 @@
 [Listary](http://www.listary.com/):如功能和Wox一样，但是匹配没有Wox好。来自[wsgzao的博客](https://wsgzao.github.io/post/windows/)。
 
 [五笔](http://pan.baidu.com/s/1i5yUJM9):使用QQ五笔输入法，但使用新世纪版字根与字库。
+
+[STranslate](https://stranslate.zggsong.com/):翻译软件，可以接入多家翻译平台，包括免费的Ai翻译，无广告，比有道好多了。
 
 [Clover](http://cn.ejie.me/):让windows系统的文件管理器像chrome一样，支持多标签页功能，但目前似乎开始有小广告了。
 
